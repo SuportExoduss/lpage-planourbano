@@ -426,31 +426,40 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
 /* ============ CAMPANHAS NA RUA (fotos reais) ============ */
 .campanhas{margin:clamp(64px,8vw,112px) 0 clamp(64px,8vw,112px)}
 .campanhas .lead{margin-top:16px}
-.galeria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:32px 0 28px}
-.galeria .col{display:grid;gap:16px;align-content:start}
-.galeria .col:nth-child(even){margin-top:48px}
-.galeria figure{margin:0;position:relative;border-radius:20px;overflow:hidden;background:var(--asfalto)}
-.galeria img{display:block;width:100%;height:auto}
-.galeria figcaption{position:absolute;left:12px;bottom:12px;background:var(--branco);color:var(--asfalto);font:500 13px/1 var(--c);padding:7px 10px;border-radius:7px}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.filtros button{min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--asfalto);background:var(--branco);color:var(--asfalto);font:600 15px/1 var(--c);cursor:pointer;transition:background .2s,color .2s}
+.filtros button:hover{background:var(--mostarda-40)}
+.filtros button[aria-pressed=true]{background:var(--asfalto);color:var(--mostarda)}
+/* todas as fotos no mesmo quadro (4:5), recortadas com o anúncio no mesmo ponto */
+.galeria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:20px 0 28px}
+.galeria figure{margin:0;position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--asfalto);animation:aparece .45s ease both}
+.galeria figure img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--mola)}
+.galeria figure:not(.pasta):hover img{transform:scale(1.04)}
+.galeria figcaption{position:absolute;left:12px;bottom:12px;background:var(--branco);color:var(--asfalto);font:600 13px/1 var(--c);padding:8px 11px;border-radius:8px}
+@keyframes aparece{from{opacity:0;transform:translateY(10px)}}
+.vazio-fmt{margin:0;aspect-ratio:4/5;border-radius:20px;border:2px dashed var(--asfalto-40);display:grid;place-content:center;gap:10px;padding:24px;text-align:center;color:var(--asfalto-75);font-size:15px}
+.vazio-fmt a{font-weight:600;color:var(--asfalto)}
+@media (max-width:1100px){.galeria{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:760px){
-  .galeria{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:24px calc(-1 * var(--g)) 24px;padding:0 var(--g);scrollbar-width:none}
+  .filtros{flex-wrap:nowrap;overflow-x:auto;margin:24px calc(-1 * var(--g)) 0;padding:2px var(--g);scrollbar-width:none}
+  .filtros::-webkit-scrollbar{display:none}
+  .filtros button{flex:none}
+  .galeria{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:16px calc(-1 * var(--g)) 24px;padding:0 var(--g);scrollbar-width:none}
   .galeria::-webkit-scrollbar{display:none}
-  .galeria .col{display:contents}
-  .galeria .col:nth-child(even){margin-top:0}
-  .galeria figure{flex:0 0 74%;aspect-ratio:4/5;scroll-snap-align:center}
-  .galeria img{height:100%;object-fit:cover}
+  .galeria figure,.vazio-fmt{flex:0 0 74%;scroll-snap-align:center}
 }
 
-/* pasta Special Projects + janela de fotos */
-.galeria .pasta{overflow:visible;background:transparent;margin-top:14px}
-.pasta button{display:block;width:100%;aspect-ratio:4/5;padding:0;border:0;border-radius:4px 20px 20px 20px;background:var(--asfalto);cursor:pointer;position:relative;text-align:left;color:var(--branco);transition:transform .35s var(--mola)}
-.pasta button::before{content:"";position:absolute;left:0;top:-14px;width:46%;height:22px;background:var(--asfalto);border-radius:12px 12px 0 0}   /* aba da pasta */
+/* pasta Projetos especiais + janela de fotos */
+.galeria .pasta{background:transparent}
+.pasta button{display:block;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:pointer;position:relative;isolation:isolate;text-align:left;color:var(--branco);transition:transform .35s var(--mola)}
+.pasta button::before{content:"";position:absolute;left:0;top:0;width:46%;height:28px;background:var(--asfalto);border-radius:14px 14px 0 0;z-index:-1}   /* aba da pasta */
+.pasta button::after{content:"";position:absolute;inset:16px 0 0;background:var(--asfalto);border-radius:4px 20px 20px 20px;z-index:-1}   /* corpo da pasta */
 .pasta button:hover{transform:translateY(-4px) rotate(-1deg)}
-.colagem{position:absolute;inset:14px 14px 76px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px}
+.colagem{position:absolute;inset:32px 14px 92px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:8px}
 .galeria .colagem img{width:100%;height:100%;object-fit:cover;border-radius:10px;border:3px solid var(--branco);box-shadow:0 6px 14px rgba(0,0,0,.35)}
 .colagem img:nth-child(1){transform:rotate(-3deg)}.colagem img:nth-child(2){transform:rotate(2.5deg)}.colagem img:nth-child(3){transform:rotate(2deg)}.colagem img:nth-child(4){transform:rotate(-2.5deg)}
 .pasta-rot{position:absolute;left:16px;right:16px;bottom:16px;display:grid;gap:4px}
-.pasta-rot b{font:900 clamp(15px,1.4vw,19px)/1.1 var(--t);text-transform:uppercase;color:var(--mostarda)}
+.pasta-rot b{font:900 clamp(15px,1.3vw,18px)/1.1 var(--t);text-transform:uppercase;color:var(--mostarda)}
 .pasta-rot small{font-size:13px;color:var(--asfalto-40)}
 .visor{border:0;padding:0;background:transparent;max-width:min(1100px,92vw);width:100%;overflow:visible}
 .visor::backdrop{background:rgba(47,46,46,.92)}
@@ -461,7 +470,7 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
 .visor button{position:absolute;width:48px;height:48px;border-radius:50%;border:0;background:var(--mostarda);color:var(--asfalto);cursor:pointer;display:grid;place-items:center}
 .visor-x{top:-20px;right:-12px}
 .visor-nav{top:calc(50% - 40px)}.visor-nav.ant{left:-18px}.visor-nav.prox{right:-18px}
-@media (max-width:760px){.galeria .pasta{margin-top:0}.pasta button::before{display:none}.pasta button{border-radius:20px;height:100%;aspect-ratio:auto}.visor-x{top:-60px;right:0}.visor-nav.ant{left:6px}.visor-nav.prox{right:6px}}
+@media (max-width:760px){.visor-x{top:-60px;right:0}.visor-nav.ant{left:6px}.visor-nav.prox{right:6px}}
 
 /* ============ COMO FUNCIONA ============ */
 .como-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px);align-items:start}
@@ -710,22 +719,33 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
 
     <div class="campanhas" id="campanhas">
       <h2>Campanhas na rua.</h2>
-      <p class="lead">Fotos reais de campanhas da Plano Urbano, separadas por formato. Em Special Projects, os projetos especiais: ônibus iluminados de Natal, painéis em shopping e outdoor.</p>
-      <div class="galeria" role="region" aria-label="Fotos de campanhas reais" tabindex="0">
-        <div class="col"><figure><img src="img/rua-busdoor-sao-goncalo.webp" alt="Dois ônibus de São Gonçalo com busdoor no vidro traseiro, rodando em uma avenida de dia" width="600" height="750" loading="lazy" decoding="async"><figcaption>Busdoor</figcaption></figure><figure><img src="img/rua-busdoor-niteroi.webp" alt="Ônibus da linha Transoceânico com busdoor no vidro traseiro, à noite" width="600" height="750" loading="lazy" decoding="async"><figcaption>Busdoor · Niterói</figcaption></figure></div>
-        <div class="col"><figure><img src="img/rua-backbus-gotrix.webp" alt="Traseira inteira de ônibus com anúncio amarelo de motos elétricas" width="600" height="750" loading="lazy" decoding="async"><figcaption>Backbus</figcaption></figure><figure><img src="img/rua-busdoor-plano-urbano.webp" alt="Traseira de ônibus com busdoor da Plano Urbano no vidro traseiro: A cidade é seu público. Publicidade em ônibus em todo o Brasil." width="600" height="750" loading="lazy" decoding="async"><figcaption>Busdoor</figcaption></figure></div>
-        <div class="col"><figure><img src="img/rua-backbus-toulon.webp" alt="Traseira inteira de ônibus com anúncio de loja de jeans, à noite" width="600" height="750" loading="lazy" decoding="async"><figcaption>Backbus</figcaption></figure><figure><img src="img/rua-backbus-dinisa.webp" alt="Traseira inteira de ônibus com anúncio de concessionária de carros, de dia" width="600" height="750" loading="lazy" decoding="async"><figcaption>Backbus</figcaption></figure></div>
-        <div class="col"><figure><img src="img/rua-envelopado.webp" alt="Ônibus rodoviário verde e prata envelopado por inteiro, na garagem" width="1280" height="720" loading="lazy" decoding="async"><figcaption>Envelopado completo</figcaption></figure>
-          <!-- projetos especiais (Natal, shopping, outdoor): uma "pasta" com colagem; o clique abre as fotos na janela #especiais -->
-          <figure class="pasta"><button type="button" id="abrePasta" aria-haspopup="dialog" aria-label="Abrir a pasta Special Projects: 11 fotos de projetos especiais">
-            <span class="colagem" aria-hidden="true"><img src="img/esp-capa-1.webp" alt="" width="400" height="300" loading="lazy" decoding="async"><img src="img/esp-capa-2.webp" alt="" width="300" height="400" loading="lazy" decoding="async"><img src="img/esp-capa-3.webp" alt="" width="400" height="300" loading="lazy" decoding="async"><img src="img/esp-capa-4.webp" alt="" width="400" height="300" loading="lazy" decoding="async"></span>
-            <span class="pasta-rot" aria-hidden="true"><b>Special Projects</b><small>11 fotos · Natal, shopping e outdoor</small></span>
-          </button></figure></div>
+      <p class="lead">Campanhas da Plano Urbano por formato. No fim, os projetos especiais: ônibus iluminados de Natal, painéis em shopping e outdoor.</p>
+      <div class="filtros" role="group" aria-label="Filtrar as fotos por formato">
+        <button type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-filtro="busdoor" aria-pressed="false">Busdoor</button>
+        <button type="button" data-filtro="max" aria-pressed="false">Max busdoor</button>
+        <button type="button" data-filtro="backbus" aria-pressed="false">Backbus</button>
+        <button type="button" data-filtro="envelopado" aria-pressed="false">Envelopado</button>
+      </div>
+      <div class="galeria" id="galeria" role="region" aria-label="Fotos de campanhas" aria-live="polite" tabindex="0">
+        <figure data-tipo="busdoor"><img src="img/gal-busdoor-sao-goncalo.webp" alt="Dois ônibus de São Gonçalo com busdoor no vidro traseiro, rodando em uma avenida de dia" width="640" height="800" loading="lazy" decoding="async"><figcaption>Busdoor</figcaption></figure>
+        <figure data-tipo="busdoor"><img src="img/gal-busdoor-niteroi.webp" alt="Ônibus da linha Transoceânico com busdoor no vidro traseiro, à noite" width="640" height="800" loading="lazy" decoding="async"><figcaption>Busdoor · Niterói</figcaption></figure>
+        <figure data-tipo="busdoor"><img src="img/gal-busdoor-plano-urbano.webp" alt="Traseira de ônibus com busdoor da Plano Urbano no vidro traseiro: A cidade é seu público. Publicidade em ônibus em todo o Brasil." width="640" height="800" loading="lazy" decoding="async"><figcaption>Busdoor</figcaption></figure>
+        <figure data-tipo="backbus"><img src="img/gal-backbus-gotrix.webp" alt="Traseira inteira de ônibus com anúncio amarelo de motos elétricas" width="640" height="800" loading="lazy" decoding="async"><figcaption>Backbus</figcaption></figure>
+        <figure data-tipo="backbus"><img src="img/gal-backbus-toulon.webp" alt="Traseira inteira de ônibus com anúncio de loja de jeans, à noite" width="640" height="800" loading="lazy" decoding="async"><figcaption>Backbus</figcaption></figure>
+        <figure data-tipo="backbus"><img src="img/gal-backbus-dinisa.webp" alt="Traseira inteira de ônibus com anúncio de concessionária de carros, de dia" width="640" height="800" loading="lazy" decoding="async"><figcaption>Backbus</figcaption></figure>
+        <figure data-tipo="envelopado"><img src="img/gal-envelopado.webp" alt="Ônibus rodoviário verde e prata envelopado por inteiro, na garagem" width="640" height="800" loading="lazy" decoding="async"><figcaption>Envelopado completo</figcaption></figure>
+        <p class="vazio-fmt" hidden><span>Ainda não há fotos deste formato aqui.</span><a href="#simulador">Veja como ele fica no simulador</a></p>
+        <!-- projetos especiais (Natal, shopping, outdoor): fica sempre no fim, com qualquer filtro; o clique abre as fotos na janela #especiais -->
+        <figure class="pasta"><button type="button" id="abrePasta" aria-haspopup="dialog" aria-label="Abrir a pasta Projetos especiais: 11 fotos de Natal, shopping e outdoor">
+          <span class="colagem" aria-hidden="true"><img src="img/esp-capa-1.webp" alt="" width="400" height="300" loading="lazy" decoding="async"><img src="img/esp-capa-2.webp" alt="" width="300" height="400" loading="lazy" decoding="async"><img src="img/esp-capa-3.webp" alt="" width="400" height="300" loading="lazy" decoding="async"><img src="img/esp-capa-4.webp" alt="" width="400" height="300" loading="lazy" decoding="async"></span>
+          <span class="pasta-rot" aria-hidden="true"><b>Projetos especiais</b><small>11 fotos · Natal, shopping e outdoor</small></span>
+        </button></figure>
       </div>
       <a class="btn btn-am" href="#proposta" data-cta="galeria">Quero a minha marca na rua <span class="bola" aria-hidden="true">%SETA%</span></a>
     </div>
 
-    <dialog class="visor" id="especiais" aria-label="Special Projects">
+    <dialog class="visor" id="especiais" aria-label="Projetos especiais">
       <figure id="visorFig"><figcaption><span id="visorTxt"></span> <small id="visorN"></small></figcaption></figure>
       <button type="button" class="visor-x" id="visorFecha" aria-label="Fechar"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
       <button type="button" class="visor-nav ant" id="visorAnt" aria-label="Foto anterior"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button>
@@ -1158,7 +1178,19 @@ document.getElementById("simCta").addEventListener("click", ()=>{
   setTimeout(()=>form.nome.focus({preventScroll:true}), 700);
 });
 
-/* ====== SPECIAL PROJECTS (janela de fotos) ====== */
+/* ====== GALERIA: FILTRO POR FORMATO ====== */
+const galeria = document.getElementById("galeria"), filtros = document.querySelector(".filtros");
+filtros.addEventListener("click", e=>{
+  const b = e.target.closest("button[data-filtro]"); if (!b) return;
+  const f = b.dataset.filtro; let n = 0;
+  filtros.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", String(x === b)));
+  galeria.querySelectorAll("figure[data-tipo]").forEach(fig=>{ const mostra = f === "todos" || fig.dataset.tipo === f; fig.hidden = !mostra; n += mostra; });
+  galeria.querySelector(".vazio-fmt").hidden = n > 0;   // formato sem foto publicada: aviso + simulador
+  galeria.scrollLeft = 0;
+  track("galeria_filtro", {formato: f});
+});
+
+/* ====== PROJETOS ESPECIAIS (janela de fotos) ====== */
 const ESPECIAIS = [
   ["esp-natal-1", "Ônibus iluminado de Natal passando ao lado de uma árvore de Natal gigante, à noite", "Ônibus iluminado de Natal"],
   ["esp-natal-2", "Ônibus com contorno de luzes vermelhas no trânsito, à noite", "Ônibus iluminado de Natal"],
@@ -1178,7 +1210,7 @@ const mostra = n => { vi = (n + ESPECIAIS.length) % ESPECIAIS.length; const [f, 
   if (!vImg.isConnected) document.getElementById("visorFig").prepend(vImg);
   vImg.src = `img/${f}.webp?v=%VERSAO%`; vImg.alt = alt; document.getElementById("visorTxt").textContent = txt;
   document.getElementById("visorN").textContent = `${vi + 1} / ${ESPECIAIS.length}`; };
-document.getElementById("abrePasta").addEventListener("click", ()=>{ mostra(0); visor.showModal(); track("special_projects"); });
+document.getElementById("abrePasta").addEventListener("click", ()=>{ mostra(0); visor.showModal(); track("projetos_especiais"); });
 document.getElementById("visorFecha").onclick = ()=>visor.close();
 document.getElementById("visorAnt").onclick = ()=>mostra(vi - 1);
 document.getElementById("visorProx").onclick = ()=>mostra(vi + 1);
