@@ -365,7 +365,8 @@ header{position:sticky;top:0;z-index:40}
 .palco .predios{position:absolute;left:0;right:0;top:14%;height:48%;z-index:-1;opacity:.45;
   background:linear-gradient(90deg,var(--asfalto-75) 0 9%,transparent 9% 11%,var(--asfalto-75) 11% 19%,transparent 19% 22%,var(--asfalto-75) 22% 35%,transparent 35% 37%,var(--asfalto-75) 37% 44%,transparent 44% 47%,var(--asfalto-75) 47% 61%,transparent 61% 63%,var(--asfalto-75) 63% 74%,transparent 74% 77%,var(--asfalto-75) 77% 90%,transparent 90% 92%,var(--asfalto-75) 92%);
   -webkit-mask:linear-gradient(transparent,#000 50%);mask:linear-gradient(transparent,#000 50%)}   /* o validador W3C acusa este "mask" como erro: falso positivo (sintaxe válida do CSS Masking; a versão -webkit- cobre Safari antigo). Não mexer */
-.palco .faixa-rua{position:absolute;left:0;right:0;bottom:54px;height:5px;z-index:-1;background:repeating-linear-gradient(90deg,var(--mostarda) 0 54px,transparent 54px 108px);animation:corre 1s linear infinite}
+.palco .faixa-rua{position:absolute;left:0;right:0;bottom:54px;height:5px;z-index:-1;background:repeating-linear-gradient(90deg,var(--mostarda) 0 54px,transparent 54px 108px);animation:corre .6s linear infinite}
+@keyframes corre{to{background-position:-108px 0}}   /* a pista corre para trás: o ônibus parece andar para a frente */
 .onibus{width:min(92%,740px);margin-bottom:32px;filter:drop-shadow(0 18px 18px rgba(0,0,0,.4))}
 .onibus.traseira{width:min(62%,370px);margin-bottom:20px;animation:balanca 2.4s ease-in-out infinite}
 .onibus .roda{transform-box:fill-box;transform-origin:center;animation:gira .6s linear infinite}
