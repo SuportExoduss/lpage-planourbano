@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://www.agenciaplanourbano.com.br/">
 <meta property="og:title" content="Plano Urbano | Publicidade em ônibus em todo o Brasil">
 <meta property="og:description" content="Busdoor, backbus e ônibus envelopado em todo o Brasil. A Plano Urbano cria a campanha com a sua empresa e cuida da execução, do planejamento à instalação.">
-<meta property="og:image" content="https://www.agenciaplanourbano.com.br/img/compartilhar.jpg?v=20261011132257">
+<meta property="og:image" content="https://www.agenciaplanourbano.com.br/img/compartilhar.jpg?v=20261011142722">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Plano Urbano: A cidade é seu público. Busdoor, backbus e ônibus envelopado em todo o Brasil.">
@@ -24,20 +24,22 @@
 {"@context":"https://schema.org","@type":"AdvertisingAgency",
  "name":"Plano Urbano","legalName":"Agencia Plano Urbano Ltda","taxID":"58.332.620/0001-08",
  "url":"https://www.agenciaplanourbano.com.br/","logo":"https://www.agenciaplanourbano.com.br/apple-touch-icon.png",
- "image":"https://www.agenciaplanourbano.com.br/img/compartilhar.jpg?v=20261011132257","slogan":"A cidade é seu público",
+ "image":"https://www.agenciaplanourbano.com.br/img/compartilhar.jpg?v=20261011142722","slogan":"A cidade é seu público",
  "description":"Agência de publicidade em ônibus: busdoor, backbus e ônibus envelopado em todo o Brasil.",
  "telephone":"+55-21-98606-2741","email":"comercial@agenciaplanourbano.com.br",
  "address":{"@type":"PostalAddress","streetAddress":"Rua São José, 253 - Fonseca","addressLocality":"Niterói","addressRegion":"RJ","postalCode":"24120-325","addressCountry":"BR"},
  "areaServed":{"@type":"Country","name":"Brasil"},
  "sameAs":["https://www.instagram.com/agenciaplanourbano/"]}
 </script>
+<script>/* planourbano.web.app e planourbano.firebaseapp.com levam ao endereço oficial (o Firebase não redireciona por domínio) */
+if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname)) location.replace("https://www.agenciaplanourbano.com.br" + location.pathname + location.search + location.hash);</script>
 <link rel="preload" href="/fonts/unbounded-latin-v1.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/rubik-latin-v1.woff2" as="font" type="font/woff2" crossorigin>
 <style>/* fontes no próprio site (só o alfabeto latino), variáveis: um arquivo cobre todos os pesos */
 @font-face{font-family:'Unbounded';font-style:normal;font-weight:800 900;font-display:swap;src:url(/fonts/unbounded-latin-v1.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Rubik';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/rubik-latin-v1.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Rubik';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/rubik-italic-latin-v1.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}</style>
-<link rel="preload" as="image" href="img/topo-natal.webp?v=20261011132257">
+<link rel="preload" as="image" href="img/topo-frota.webp?v=20261011142722">
 <style>
 /* ============ TOKENS: só as cores do Brandbook Plano Urbano 2025 ============ */
 :root{
@@ -324,6 +326,7 @@ header{position:sticky;top:0;z-index:40}
 .card .img svg{width:62%;margin-bottom:-2px}
 .card .img.c-am{background:var(--mostarda)}
 .card .img.c-ab{background:var(--abobora)}
+.card .img.c-in{background:var(--indigo)}
 .card .corpo{padding:22px 24px 26px}
 .card h3{font-size:clamp(18px,1.6vw,22px);margin-bottom:10px}
 .card p{font-size:16px;color:var(--asfalto-75)}
@@ -445,6 +448,28 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
   .galeria img{height:100%;object-fit:cover}
 }
 
+/* pasta Special Projects + janela de fotos */
+.galeria .pasta{overflow:visible;background:transparent;margin-top:14px}
+.pasta button{display:block;width:100%;aspect-ratio:4/5;padding:0;border:0;border-radius:4px 20px 20px 20px;background:var(--asfalto);cursor:pointer;position:relative;text-align:left;color:var(--branco);transition:transform .35s var(--mola)}
+.pasta button::before{content:"";position:absolute;left:0;top:-14px;width:46%;height:22px;background:var(--asfalto);border-radius:12px 12px 0 0}   /* aba da pasta */
+.pasta button:hover{transform:translateY(-4px) rotate(-1deg)}
+.colagem{position:absolute;inset:14px 14px 76px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px}
+.galeria .colagem img{width:100%;height:100%;object-fit:cover;border-radius:10px;border:3px solid var(--branco);box-shadow:0 6px 14px rgba(0,0,0,.35)}
+.colagem img:nth-child(1){transform:rotate(-3deg)}.colagem img:nth-child(2){transform:rotate(2.5deg)}.colagem img:nth-child(3){transform:rotate(2deg)}.colagem img:nth-child(4){transform:rotate(-2.5deg)}
+.pasta-rot{position:absolute;left:16px;right:16px;bottom:16px;display:grid;gap:4px}
+.pasta-rot b{font:900 clamp(15px,1.4vw,19px)/1.1 var(--t);text-transform:uppercase;color:var(--mostarda)}
+.pasta-rot small{font-size:13px;color:var(--asfalto-40)}
+.visor{border:0;padding:0;background:transparent;max-width:min(1100px,92vw);width:100%;overflow:visible}
+.visor::backdrop{background:rgba(47,46,46,.92)}
+.visor figure{margin:0}
+.visor img{display:block;width:100%;max-height:76vh;object-fit:contain;border-radius:18px}
+.visor figcaption{margin-top:12px;color:var(--branco);font-weight:500;text-align:center}
+.visor figcaption small{color:var(--asfalto-40);margin-left:8px}
+.visor button{position:absolute;width:48px;height:48px;border-radius:50%;border:0;background:var(--mostarda);color:var(--asfalto);cursor:pointer;display:grid;place-items:center}
+.visor-x{top:-20px;right:-12px}
+.visor-nav{top:calc(50% - 40px)}.visor-nav.ant{left:-18px}.visor-nav.prox{right:-18px}
+@media (max-width:760px){.galeria .pasta{margin-top:0}.pasta button::before{display:none}.pasta button{border-radius:20px;height:100%;aspect-ratio:auto}.visor-x{top:-60px;right:0}.visor-nav.ant{left:6px}.visor-nav.prox{right:6px}}
+
 /* ============ COMO FUNCIONA ============ */
 .como-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px);align-items:start}
 .como-grid .lead{margin-top:16px}
@@ -508,12 +533,12 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
     </div>
     <div class="mosaico" role="group" aria-label="Fotos de campanhas e da cidade">
       <div class="col">
-        <figure class="foto r-larga"><img src="img/topo-natal.webp?v=20261011132257" alt="Ônibus com luzes de Natal passando ao lado de uma árvore de Natal iluminada, à noite" width="720" height="495" fetchpriority="high"></figure>
-        <figure class="foto r-alta"><img src="img/campanha-cidade-fala.webp?v=20261011132257" alt="Peça da Plano Urbano: A cidade fala, sua marca responde" width="800" height="1003"></figure>
+        <figure class="foto r-larga"><img src="img/topo-frota.webp?v=20261011142722" alt="Quatro ônibus estacionados lado a lado com anúncios na traseira, à noite" width="720" height="495" fetchpriority="high"></figure>
+        <figure class="foto r-alta"><img src="img/campanha-cidade-fala.webp?v=20261011142722" alt="Peça da Plano Urbano: A cidade fala, sua marca responde" width="800" height="1003"></figure>
       </div>
       <div class="col">
-        <figure class="foto r-alta"><img src="img/topo-plano-urbano.webp?v=20261011132257" alt="Traseira de ônibus com o anúncio da Plano Urbano: A cidade é o seu público. Promova seu negócio aqui." width="720" height="900"></figure>
-        <figure class="foto r-larga"><img src="img/topo-luzes.webp?v=20261011132257" alt="Ônibus decorado com luzes e árvore de Natal na lateral, à noite" width="720" height="495" style="object-position:30% 50%"></figure>
+        <figure class="foto r-alta"><img src="img/topo-plano-urbano.webp?v=20261011142722" alt="Traseira de ônibus com o anúncio da Plano Urbano: A cidade é o seu público. Promova seu negócio aqui." width="720" height="900"></figure>
+        <figure class="foto r-larga"><img src="img/topo-ags.webp?v=20261011142722" alt="Traseira inteira de ônibus com anúncio de distribuidora de aço" width="720" height="495"></figure>
       </div>
     </div>
   </div>
@@ -556,7 +581,7 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
                   <label><input type="radio" name="contato" value="WhatsApp" checked> WhatsApp</label>
                   <label><input type="radio" name="contato" value="Ligação"> Ligação</label>
                 </div><p class="nota-campo" id="n-contato">O pedido é aberto no WhatsApp para você revisar e enviar. Depois, a Plano Urbano retorna pelo canal escolhido.</p></div>
-              <label class="aceite"><input type="checkbox" name="aceite" id="f-aceite"> <span>Li e concordo com a <a href="/privacidade">Política de Privacidade</a> e autorizo o contato da Plano Urbano sobre este pedido.</span></label>
+              <label class="aceite"><input type="checkbox" name="aceite" id="f-aceite"> <span>Li e concordo com a <a href="/privacidade" target="_blank" rel="noopener">Política de Privacidade<span class="sr"> (abre em nova aba)</span></a> e autorizo o contato da Plano Urbano sobre este pedido.</span></label>
               <span class="erro" id="e-aceite"></span>
             </div>
             <div class="acoes"><button class="btn btn-am" type="button" data-ir="2">Continuar</button></div>
@@ -574,7 +599,7 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
             <h3>Sua campanha</h3>
             <div class="campos">
               <div class="campo"><label for="f-formato">Formato de interesse</label>
-                <select id="f-formato" name="formato"><option>Ainda não sei</option><option>Ônibus envelopado</option><option>Busdoor</option><option>Backbus</option><option>Outro</option></select></div>
+                <select id="f-formato" name="formato"><option>Ainda não sei</option><option>Ônibus envelopado</option><option>Busdoor</option><option>Max busdoor</option><option>Backbus</option><option>Projeto especial (Natal, shopping, outdoor)</option><option>Outro</option></select></div>
               <div class="campo"><label for="f-inicio">Prazo para início</label>
                 <select id="f-inicio" name="inicio"><option>Ainda não defini</option><option>Este mês</option><option>Nos próximos 3 meses</option><option>Ainda estou pesquisando</option></select></div>
               <div class="campo"><label for="f-verba">Faixa de investimento</label>
@@ -593,7 +618,7 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
         <div class="feito" id="feito" tabindex="-1">
           <div class="sim-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 22 22"><path d="M5 11.5l4 4 8-8.5" fill="none" stroke="#2F2E2E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Quase lá.</h3>
-          <p class="lead" style="margin-top:10px">Abrimos o WhatsApp com o seu pedido já escrito. É só tocar em enviar na conversa.</p>
+          <p class="lead" id="feitoTxt" style="margin-top:10px">Abrimos o WhatsApp com o seu pedido já escrito. É só tocar em enviar na conversa.</p>
           <a class="btn btn-esc" id="feitoWa" href="#" target="_blank" rel="noopener" style="margin-top:22px">Abrir o WhatsApp</a>
           <p class="copia">Não usa WhatsApp no computador? <button type="button" id="copiaPedido">Copie o pedido</button> e envie pelo celular para (21) 98606-2741.</p>
         </div>
@@ -668,26 +693,41 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
         <div class="corpo"><h3>Busdoor</h3><p><b>Vidro traseiro.</b> Anúncio na altura dos olhos de quem está no carro de trás. Indicado para ofertas e negócios com endereço físico.</p></div>
       </article>
       <article class="card">
+        <div class="img c-in" data-onibus="max" data-cor="mostarda"></div>
+        <div class="corpo"><h3>Max busdoor</h3><p><b>Vidro traseiro inteiro e área ao redor.</b> Mais espaço que o busdoor, na altura dos olhos de quem vem atrás. Indicado para quem quer mais destaque sem ocupar a traseira toda.</p></div>
+      </article>
+      <article class="card">
         <div class="img c-ab" data-onibus="backbus"></div>
         <div class="corpo"><h3>Backbus</h3><p><b>Traseira inteira.</b> Área ampla, legível à distância e com longo tempo de exposição no trânsito. Indicado para fixar a marca em quem faz o mesmo trajeto todos os dias.</p></div>
       </article>
-      <article class="card largo">
-        <div class="img"><img src="img/campanha-olho.webp?v=20261011132257" alt="" loading="lazy" width="900" height="505"></div>
+      <article class="card">
+        <div class="img"><img src="img/campanha-olho.webp?v=20261011142722" alt="" loading="lazy" width="900" height="505"></div>
         <div class="corpo"><h3>Criação da campanha</h3><p>Estudamos o seu público e desenvolvemos a mensagem e a arte junto com a sua equipe.</p></div>
       </article>
     </div>
 
     <div class="campanhas" id="campanhas">
       <h2>Campanhas na rua.</h2>
-      <p class="lead">Fotos reais de campanhas da Plano Urbano: do adesivo aplicado ao anúncio rodando pela cidade.</p>
+      <p class="lead">Fotos reais de campanhas da Plano Urbano, separadas por formato. Em Special Projects, os projetos especiais: ônibus iluminados de Natal, painéis em shopping e outdoor.</p>
       <div class="galeria" role="region" aria-label="Fotos de campanhas reais" tabindex="0">
-        <div class="col"><figure><img src="img/rua-busdoor-sao-goncalo.webp?v=20261011132257" alt="Dois ônibus de São Gonçalo com busdoor no vidro traseiro, rodando em uma avenida de dia" width="600" height="750" loading="lazy" decoding="async"><figcaption>Busdoor · São Gonçalo</figcaption></figure><figure><img src="img/rua-aplicacao.webp?v=20261011132257" alt="Mãos aplicando adesivo na lateral de um ônibus" width="1280" height="720" loading="lazy" decoding="async"><figcaption>Aplicação do adesivo</figcaption></figure></div>
-        <div class="col"><figure><img src="img/rua-shopping.webp?v=20261011132257" alt="Painéis digitais com anúncios no corredor de um shopping movimentado" width="1280" height="720" loading="lazy" decoding="async"><figcaption>Painéis em shopping</figcaption></figure><figure><img src="img/rua-busdoor-niteroi.webp?v=20261011132257" alt="Ônibus da linha Transoceânico com busdoor no vidro traseiro, à noite" width="600" height="750" loading="lazy" decoding="async"><figcaption>Busdoor · Niterói</figcaption></figure></div>
-        <div class="col"><figure><img src="img/rua-busdoor-noite.webp?v=20261011132257" alt="Traseira de ônibus com anúncio de loja de pisos e revestimentos, à noite" width="600" height="750" loading="lazy" decoding="async"><figcaption>Busdoor</figcaption></figure><figure><img src="img/rua-natal.webp?v=20261011132257" alt="Ônibus iluminado com a mensagem Feliz Natal passando em frente a um shopping decorado" width="1280" height="720" loading="lazy" decoding="async"><figcaption>Ônibus iluminado de Natal</figcaption></figure></div>
-        <div class="col"><figure><img src="img/rua-backbus.webp?v=20261011132257" alt="Traseira inteira de ônibus com anúncio de loja de roupas" width="1280" height="720" loading="lazy" decoding="async"><figcaption>Backbus</figcaption></figure><figure><img src="img/rua-outdoor.webp?v=20261011132257" alt="Outdoor com anúncio de corretora de seguros à beira de uma via" width="600" height="750" loading="lazy" decoding="async"><figcaption>Outdoor</figcaption></figure></div>
+        <div class="col"><figure><img src="img/rua-busdoor-sao-goncalo.webp?v=20261011142722" alt="Dois ônibus de São Gonçalo com busdoor no vidro traseiro, rodando em uma avenida de dia" width="600" height="750" loading="lazy" decoding="async"><figcaption>Busdoor · São Gonçalo</figcaption></figure><figure><img src="img/rua-busdoor-niteroi.webp?v=20261011142722" alt="Ônibus da linha Transoceânico com busdoor no vidro traseiro, à noite" width="600" height="750" loading="lazy" decoding="async"><figcaption>Busdoor · Niterói</figcaption></figure></div>
+        <div class="col"><figure><img src="img/rua-max-gotrix.webp?v=20261011142722" alt="Traseira de ônibus com anúncio amarelo de motos elétricas cobrindo o vidro e a área logo abaixo" width="600" height="750" loading="lazy" decoding="async"><figcaption>Max busdoor · São Gonçalo</figcaption></figure><figure><img src="img/rua-max-petala.webp?v=20261011142722" alt="Traseira de ônibus com anúncio de loja de pisos e revestimentos cobrindo o vidro e a área logo abaixo, à noite" width="600" height="750" loading="lazy" decoding="async"><figcaption>Max busdoor</figcaption></figure></div>
+        <div class="col"><figure><img src="img/rua-backbus-toulon.webp?v=20261011142722" alt="Traseira inteira de ônibus com anúncio de loja de jeans, à noite" width="600" height="750" loading="lazy" decoding="async"><figcaption>Backbus</figcaption></figure><figure><img src="img/rua-backbus-dinisa.webp?v=20261011142722" alt="Traseira inteira de ônibus com anúncio de concessionária de carros, de dia" width="600" height="750" loading="lazy" decoding="async"><figcaption>Backbus</figcaption></figure></div>
+        <div class="col"><figure><img src="img/rua-envelopado.webp?v=20261011142722" alt="Ônibus rodoviário verde e prata envelopado por inteiro, na garagem" width="1280" height="720" loading="lazy" decoding="async"><figcaption>Envelopado completo</figcaption></figure>
+                    <figure class="pasta"><button type="button" id="abrePasta" aria-haspopup="dialog" aria-label="Abrir a pasta Special Projects: 11 fotos de projetos especiais">
+            <span class="colagem" aria-hidden="true"><img src="img/esp-capa-1.webp?v=20261011142722" alt="" width="400" height="300" loading="lazy" decoding="async"><img src="img/esp-capa-2.webp?v=20261011142722" alt="" width="300" height="400" loading="lazy" decoding="async"><img src="img/esp-capa-3.webp?v=20261011142722" alt="" width="400" height="300" loading="lazy" decoding="async"><img src="img/esp-capa-4.webp?v=20261011142722" alt="" width="400" height="300" loading="lazy" decoding="async"></span>
+            <span class="pasta-rot" aria-hidden="true"><b>Special Projects</b><small>11 fotos · Natal, shopping e outdoor</small></span>
+          </button></figure></div>
       </div>
       <a class="btn btn-am" href="#proposta" data-cta="galeria">Quero a minha marca na rua <span class="bola" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11L11 3M5 3h6v6"/></svg></span></a>
     </div>
+
+    <dialog class="visor" id="especiais" aria-label="Special Projects">
+      <figure id="visorFig"><figcaption><span id="visorTxt"></span> <small id="visorN"></small></figcaption></figure>
+      <button type="button" class="visor-x" id="visorFecha" aria-label="Fechar"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+      <button type="button" class="visor-nav ant" id="visorAnt" aria-label="Foto anterior"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button>
+      <button type="button" class="visor-nav prox" id="visorProx" aria-label="Próxima foto"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button>
+    </dialog>
 
     <div class="sim" id="simulador">
       <div class="sim-topo">
@@ -702,6 +742,7 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
             <div class="pilulas">
               <input type="radio" name="s-fmt" id="f1" value="envelopado" checked><label for="f1">Envelopado</label>
               <input type="radio" name="s-fmt" id="f2" value="busdoor"><label for="f2">Busdoor</label>
+              <input type="radio" name="s-fmt" id="f4" value="max"><label for="f4">Max busdoor</label>
               <input type="radio" name="s-fmt" id="f3" value="backbus"><label for="f3">Backbus</label>
             </div></fieldset>
           <fieldset><legend>Cor</legend>
@@ -731,7 +772,7 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
     <div>
       <h2>Como funciona.</h2>
       <p class="lead">Do primeiro contato à sua marca rodando pela cidade.</p>
-      <figure class="como-foto"><img src="img/como-garagem.webp?v=20261011132257" alt="Ônibus estacionado na garagem, pronto para receber a campanha" width="720" height="900" loading="lazy" decoding="async"></figure>
+      <figure class="como-foto"><img src="img/como-aplicacao.webp?v=20261011142722" alt="Mãos aplicando o adesivo da campanha na lateral de um ônibus" width="900" height="900" loading="lazy" decoding="async"></figure>
     </div>
     <ol class="passos">
       <li><h3>Você conta o objetivo.</h3><p>O que quer vender, para quem e onde.</p></li>
@@ -750,7 +791,7 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
       <p class="lead">O ônibus passa várias vezes por dia pelas regiões onde o seu público circula, em cada cidade onde a sua marca precisa estar.</p>
       <a class="btn btn-esc" href="#proposta" data-cta="final">Solicitar orçamento <span class="bola" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11L11 3M5 3h6v6"/></svg></span></a>
     </div>
-    <figure class="foto"><img src="img/rua-vitrine.webp?v=20261011132257" alt="Ônibus de São Gonçalo rodando na avenida com o anúncio da Plano Urbano no vidro traseiro: Anuncie aqui" loading="lazy" decoding="async" width="941" height="529"></figure>
+    <figure class="foto"><img src="img/rua-vitrine.webp?v=20261011142722" alt="Ônibus de São Gonçalo rodando na avenida com o anúncio da Plano Urbano no vidro traseiro: Anuncie aqui" loading="lazy" decoding="async" width="941" height="529"></figure>
   </div>
 </section>
 </main>
@@ -767,11 +808,11 @@ footer{background:var(--asfalto);color:var(--branco);padding:clamp(48px,7vw,88px
         <li><a class="js-wa" href="https://wa.me/5521986062741?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20publicidade%20em%20%C3%B4nibus." target="_blank" rel="noopener" data-cta="rodape">WhatsApp (21) 98606-2741</a></li>
         <li><a href="mailto:comercial@agenciaplanourbano.com.br">comercial@<wbr>agenciaplanourbano.com.br</a></li>
       </ul></div>
-      <div><h2>Redes</h2><ul><li><a href="https://www.instagram.com/agenciaplanourbano/" target="_blank" rel="noopener">Instagram @agenciaplanourbano</a></li><li><a href="/privacidade">Política de Privacidade</a></li></ul></div>
+      <div><h2>Redes</h2><ul><li><a href="https://www.instagram.com/agenciaplanourbano/" target="_blank" rel="noopener">Instagram @agenciaplanourbano</a></li></ul></div>
     </div>
     <div class="gigante" aria-hidden="true"><svg role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1026.9 283.3" fill="currentColor"><path fill-rule="evenodd" d="M130.8 253.5L104.6 279.8C102.3 282.0 99.2 283.3 96.1 283.3L12.0 283.3C5.4 283.3 0.0 277.9 0.0 271.3L0.0 177.0C0.0 167.6 10.3 161.9 18.3 166.8L128.6 234.8C135.2 238.8 136.3 248.0 130.8 253.5"/><path fill-rule="evenodd" d="M50.8 24.4C50.8 19.1 51.4 13.9 52.7 9.0C54.0 3.7 58.8 0.0 64.3 0.0L166.9 0.0C172.3 0.0 177.2 3.7 178.5 9.0C179.9 14.9 180.6 21.1 180.3 27.6C178.7 60.0 152.9 86.6 120.5 89.0C82.6 91.9 50.8 61.8 50.8 24.4"/><path fill-rule="evenodd" d="M171.3 261.0L171.3 261.0C181.6 267.4 177.1 283.3 165.0 283.3C154.3 283.3 148.9 270.3 156.5 262.8C160.4 258.8 166.5 258.1 171.3 261.0"/><path fill-rule="evenodd" d="M151.5 219.8L5.7 130.0C2.2 127.8 0.0 124.0 0.0 119.8L0.0 12.0C0.0 5.4 5.4 0.0 12.0 0.0L14.8 0.0C22.1 0.0 27.6 6.3 26.7 13.5C26.2 17.8 26.0 22.2 26.1 26.7C27.3 75.3 67.8 114.4 116.4 113.9C133.0 113.7 148.5 109.1 161.8 101.0C166.5 98.2 172.6 98.9 176.5 102.8L220.5 146.8C225.2 151.5 225.2 159.1 220.5 163.8L166.3 218.1C162.3 222.0 156.2 222.7 151.5 219.8"/><path fill-rule="evenodd" d="M283.3 12.0L283.3 96.1C283.3 99.2 282.0 102.3 279.8 104.5L255.0 129.3C250.3 134.0 242.7 134.0 238.0 129.3L194.0 85.3C190.1 81.4 189.3 75.3 192.2 70.6C200.4 57.1 205.1 41.3 205.1 24.4C205.1 20.7 204.8 17.1 204.4 13.5C203.5 6.4 209.1 0.0 216.3 0.0L271.3 0.0C277.9 0.0 283.3 5.4 283.3 12.0"/><path fill-rule="evenodd" d="M191.9 227.4L262.8 156.5C270.4 148.9 283.3 154.3 283.3 165.0L283.3 271.3C283.3 277.9 277.9 283.3 271.3 283.3L257.9 283.3C255.7 283.3 253.5 282.7 251.6 281.5L194.1 246.1C187.5 242.0 186.4 232.8 191.9 227.4"/><path fill-rule="evenodd" d="M392.2 23.1L392.2 50.3C392.2 51.4 393.1 52.3 394.2 52.3L431.4 52.3C439.0 52.3 445.2 45.3 445.2 36.7C445.2 28.0 439.0 21.0 431.4 21.0L394.2 21.0C393.1 21.0 392.2 21.9 392.2 23.1M390.2 124.8L372.7 124.8C371.5 124.8 370.6 123.9 370.6 122.7L370.6 2.3C370.6 1.2 371.5 0.2 372.7 0.2L392.2 0.2L392.2 0.3L431.4 0.3C450.4 0.3 465.9 16.6 465.9 36.7C465.9 56.7 450.4 73.1 431.4 73.1L394.2 73.1C393.1 73.1 392.2 74.0 392.2 75.1L392.2 122.7C392.2 123.9 391.3 124.8 390.2 124.8"/><path fill-rule="evenodd" d="M603.5 66.8L616.0 32.1C616.7 30.3 619.2 30.3 619.8 32.1L632.2 66.8C632.7 68.2 631.7 69.6 630.3 69.6L605.4 69.6C604.0 69.6 603.0 68.2 603.5 66.8M627.3 0.2L608.3 0.2C607.5 0.2 606.7 0.8 606.4 1.6L567.0 105.5C566.7 106.3 565.9 106.9 565.1 106.9L499.0 106.9C497.9 106.9 496.9 105.9 496.9 104.8L496.9 2.3C496.9 1.2 496.0 0.2 494.9 0.2L477.4 0.2C476.3 0.2 475.4 1.2 475.4 2.3L475.4 122.9C475.4 124.0 476.3 124.9 477.4 124.9L581.2 124.9C582.0 124.9 582.8 124.4 583.1 123.6L594.3 92.5C594.6 91.7 595.4 91.1 596.2 91.1L639.4 91.1C640.3 91.1 641.1 91.7 641.3 92.5L652.4 123.6C652.7 124.4 653.5 124.9 654.4 124.9L672.9 124.9C674.4 124.9 675.4 123.5 674.9 122.2L629.3 1.6C629.0 0.8 628.2 0.2 627.3 0.2"/><path fill-rule="evenodd" d="M702.8 124.9L685.3 124.9C684.2 124.9 683.2 124.0 683.2 122.9L683.2 2.3C683.2 1.2 684.2 0.3 685.3 0.3L705.6 0.3C706.3 0.3 707.0 0.6 707.3 1.3L753.3 80.8C754.4 82.6 757.2 81.9 757.2 79.8L757.2 2.3C757.2 1.2 758.1 0.3 759.2 0.3L776.7 0.3C777.8 0.3 778.7 1.2 778.7 2.3L778.7 122.9C778.7 124.0 777.8 124.9 776.7 124.9L758.1 124.9C757.3 124.9 756.7 124.6 756.3 123.9L708.6 41.6C707.6 39.8 704.8 40.5 704.8 42.6L704.8 122.9C704.8 124.0 703.9 124.9 702.8 124.9"/><path fill-rule="evenodd" d="M810.5 62.4C810.5 85.4 827.5 104.1 848.4 104.1C869.3 104.1 886.3 85.4 886.3 62.4C886.3 39.4 869.3 20.8 848.4 20.8C827.5 20.8 810.5 39.4 810.5 62.4M789.8 62.4C789.8 28.0 816.1 0.0 848.4 0.0C880.7 0.0 907.0 28.0 907.0 62.4C907.0 96.8 880.7 124.8 848.4 124.8C816.1 124.8 789.8 96.8 789.8 62.4"/><path fill-rule="evenodd" d="M458.8 235.7C458.8 261.9 438.7 283.3 413.9 283.3C389.2 283.3 369.0 261.9 369.0 235.7L369.0 160.2C369.0 159.1 369.9 158.2 371.1 158.2L387.7 158.2C388.9 158.2 389.8 159.1 389.8 160.2L389.8 235.7C389.8 250.5 400.6 262.5 413.9 262.5C427.2 262.5 438.1 250.5 438.1 235.7L438.1 160.2C438.1 159.1 439.0 158.2 440.1 158.2L456.8 158.2C457.9 158.2 458.8 159.1 458.8 160.2L458.8 235.7"/><path fill-rule="evenodd" d="M494.8 181.0L494.8 208.2C494.8 209.3 495.7 210.2 496.8 210.2L534.0 210.2C541.6 210.2 547.8 203.2 547.8 194.6C547.8 186.0 541.6 178.9 534.0 178.9L496.8 178.9C495.7 178.9 494.8 179.9 494.8 181.0M492.8 282.7L475.3 282.7C474.2 282.7 473.2 281.8 473.2 280.7L473.2 160.2C473.2 159.1 474.2 158.2 475.3 158.2L494.8 158.2L494.8 158.2L534.0 158.2C553.0 158.2 568.5 174.5 568.5 194.6C568.5 213.5 554.9 229.0 537.5 230.8C535.9 231.0 535.1 232.6 535.9 233.9L563.4 279.6C564.2 281.0 563.2 282.7 561.6 282.7L541.2 282.7C540.5 282.7 539.8 282.3 539.5 281.7L509.6 232.0C509.2 231.4 508.5 231.0 507.8 231.0L496.8 231.0C495.7 231.0 494.8 231.9 494.8 233.0L494.8 280.7C494.8 281.8 493.9 282.7 492.8 282.7"/><path fill-rule="evenodd" d="M638.4 264.8C649.1 264.8 655.8 258.0 655.8 247.1C655.8 238.5 651.3 232.4 644.0 230.4C643.8 230.3 643.6 230.3 643.4 230.3L602.8 230.3C601.7 230.3 600.8 231.2 600.8 232.3L600.8 262.8C600.8 263.9 601.7 264.8 602.8 264.8L638.4 264.8M602.8 208.7L643.7 208.7C644.1 208.7 644.5 208.6 644.9 208.4C649.1 205.4 651.5 200.3 651.5 193.8C651.5 183.1 644.6 176.3 634.1 176.3L602.8 176.3C601.7 176.3 600.8 177.2 600.8 178.3L600.8 206.7C600.8 207.8 601.7 208.7 602.8 208.7M642.1 282.9L581.3 282.9C580.1 282.9 579.2 282.0 579.2 280.8L579.2 160.2C579.2 159.1 580.1 158.2 581.3 158.2L637.8 158.2C658.6 158.2 673.2 172.1 673.2 192.0C673.2 202.8 668.9 211.8 661.7 216.9C660.5 217.8 660.6 219.6 661.9 220.4C671.5 225.7 677.5 236.4 677.5 249.1C677.5 269.0 662.9 282.9 642.1 282.9"/><path fill-rule="evenodd" d="M725.3 227.5L750.2 227.5C751.6 227.5 752.6 226.1 752.1 224.8L739.7 190.1C739.1 188.3 736.5 188.3 735.9 190.1L723.4 224.8C722.9 226.1 723.9 227.5 725.3 227.5M701.1 282.9L682.5 282.9C681.0 282.9 680.1 281.4 680.6 280.1L726.3 159.5C726.6 158.7 727.4 158.2 728.2 158.2L747.2 158.2C748.1 158.2 748.8 158.7 749.1 159.5L794.7 280.1C795.2 281.5 794.3 282.9 792.8 282.9L774.2 282.9C773.4 282.9 772.6 282.3 772.3 281.5L761.2 250.4C760.9 249.6 760.2 249.1 759.3 249.1L716.1 249.1C715.2 249.1 714.5 249.6 714.2 250.4L703.0 281.5C702.7 282.3 701.9 282.9 701.1 282.9"/><path fill-rule="evenodd" d="M822.6 282.9L805.2 282.9C804.0 282.9 803.1 282.0 803.1 280.8L803.1 160.2C803.1 159.1 804.0 158.2 805.2 158.2L825.4 158.2C826.2 158.2 826.8 158.6 827.2 159.2L873.2 238.7C874.3 240.5 877.0 239.8 877.0 237.7L877.0 160.2C877.0 159.1 877.9 158.2 879.1 158.2L896.5 158.2C897.7 158.2 898.6 159.1 898.6 160.2L898.6 280.8C898.6 282.0 897.7 282.9 896.5 282.9L877.9 282.9C877.2 282.9 876.5 282.5 876.2 281.9L828.5 199.5C827.5 197.7 824.7 198.4 824.7 200.5L824.7 280.8C824.7 282.0 823.8 282.9 822.6 282.9"/><path fill-rule="evenodd" d="M930.4 220.4C930.4 243.3 947.4 262.0 968.3 262.0C989.2 262.0 1006.1 243.3 1006.1 220.4C1006.1 197.4 989.2 178.7 968.3 178.7C947.4 178.7 930.4 197.4 930.4 220.4M909.6 220.4C909.6 185.9 935.9 157.9 968.3 157.9C1000.6 157.9 1026.9 185.9 1026.9 220.4C1026.9 254.8 1000.6 282.8 968.3 282.8C935.9 282.8 909.6 254.8 909.6 220.4"/></svg></div>
     <div class="legal">
-      <p>© 2026 Agencia Plano Urbano Ltda</p>
+      <p>© 2026 Agencia Plano Urbano Ltda · <a href="/privacidade">Política de Privacidade</a></p>
       <p>A cidade é seu público.</p>
     </div>
   </div>
@@ -862,7 +903,8 @@ const etapas = [...document.querySelectorAll(".etapas li")], passos = [...form.q
 // só os dígitos do número nacional: tira o +55 e o 0 de discagem que muita gente digita
 const digitos = v => { let d = v.replace(/\D/g,""); if (d.length > 11 && d.startsWith("55")) d = d.slice(2); return d.replace(/^0+/,"").slice(0,11); };
 const DDD = "11 12 13 14 15 16 17 18 19 21 22 24 27 28 31 32 33 34 35 37 38 41 42 43 44 45 46 47 48 49 51 53 54 55 61 62 63 64 65 66 67 68 69 71 73 74 75 77 79 81 82 83 84 85 86 87 88 89 91 92 93 94 95 96 97 98 99".split(" ");
-const foneValido = d => (d.length === 10 || (d.length === 11 && d[2] === "9")) && DDD.includes(d.slice(0,2));
+const foneValido = d => ((d.length === 10 && "2345".includes(d[2])) || (d.length === 11 && d[2] === "9")) && DDD.includes(d.slice(0,2));
+const semNove = d => d.length === 10 && "6789".includes(d[2]);   // celular antigo, sem o 9 (não existe desde 2016)
 tel.addEventListener("input", ()=>{
   const d = digitos(tel.value);
   tel.value = d.length>6 ? `(${d.slice(0,2)}) ${d.slice(2,d.length-4)}-${d.slice(-4)}` : d.length>2 ? `(${d.slice(0,2)}) ${d.slice(2)}` : d;
@@ -871,7 +913,7 @@ function erro(id, txt, campo){ document.getElementById(id).textContent = txt; if
 function validaPasso1(){
   const nome = form.nome.value.trim(), fone = digitos(tel.value), aceitou = form.aceite.checked;
   erro("e-nome", nome.length < 2 ? "Informe o seu nome." : "", form.nome);
-  erro("e-wa", foneValido(fone) ? "" : "Informe um WhatsApp válido, com DDD.", tel);
+  erro("e-wa", foneValido(fone) ? "" : semNove(fone) ? "Celular tem 9 dígitos depois do DDD: inclua o 9 na frente." : "Informe um WhatsApp válido, com DDD.", tel);
   erro("e-aceite", aceitou ? "" : "Confirme a autorização para continuar.");
   if (nome.length < 2){ form.nome.focus(); return false; }
   if (!foneValido(fone)){ tel.focus(); return false; }
@@ -916,7 +958,10 @@ form.addEventListener("submit", async e=>{
   const pedido = montaPedido();
   const link = linkWa(pedido, "");   // a origem já vai no resumo
   pedidoAtual = pedido;
-  window.open(link, "_blank");
+  const aba = window.open(link, "_blank");   // null quando o navegador bloqueia a nova aba
+  document.getElementById("feitoTxt").textContent = aba
+    ? "Abrimos o WhatsApp com o seu pedido já escrito. É só tocar em enviar na conversa."
+    : "Seu pedido está pronto. Toque em Abrir o WhatsApp e depois em enviar na conversa.";
   document.getElementById("feitoWa").href = link;   // se o navegador bloquear a nova aba
   track("generate_lead");
   form.reset(); form.hidden = true; document.querySelector(".etapas").hidden = true;
@@ -991,8 +1036,13 @@ elSlots.addEventListener("click", e=>{
   atualizaBotao();
 });
 btnAg.addEventListener("click", e=>{ if (btnAg.getAttribute("aria-disabled") === "true"){ e.preventDefault(); document.getElementById("diaEscolhido").textContent = "Selecione um dia e um horário."; } else track("agendar_whatsapp"); });
-document.getElementById("mesAnt").onclick = ()=>{ mes = dataUTC(mes.getUTCFullYear(), mes.getUTCMonth()-1, 1); desenhaMes(); };
-document.getElementById("mesProx").onclick = ()=>{ mes = dataUTC(mes.getUTCFullYear(), mes.getUTCMonth()+1, 1); desenhaMes(); };
+// ao trocar de mês, o dia e o horário escolhidos (de outro mês) são limpos: a tela sempre mostra o mês aberto
+const trocaMes = n => { mes = dataUTC(mes.getUTCFullYear(), mes.getUTCMonth()+n, 1); diaSel = horaSel = null;
+  elSlots.innerHTML = '<p class="vazio">Escolha um dia para ver os horários.</p>';
+  document.getElementById("diaEscolhido").textContent = "Selecione um dia no calendário." + notaFuso;
+  desenhaMes(); atualizaBotao(); };
+document.getElementById("mesAnt").onclick = ()=>trocaMes(-1);
+document.getElementById("mesProx").onclick = ()=>trocaMes(1);
 document.getElementById("diaEscolhido").textContent = "Selecione um dia no calendário." + notaFuso;
 desenhaMes(); atualizaBotao();
 /* se o mês atual não tem mais dias livres, já abre o próximo */
@@ -1015,6 +1065,7 @@ const COR = {
   indigo:{bg:"#5757C1", tx:"#FFFFFF"},
   branco:{bg:"#FFFFFF", tx:"#2F2E2E"}
 };
+const NOMES = {envelopado:"Envelopado", busdoor:"Busdoor", max:"Max busdoor", backbus:"Backbus"};
 const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const tamanho = (txt, largura, max) => Math.min(max, largura / Math.max(4, txt.length * .78));
 let uid = 0;
@@ -1032,30 +1083,35 @@ function lateral(nome, cor){
     <rect x="596" y="140" width="60" height="44" rx="4" fill="none" stroke="${cor.tx}" stroke-opacity=".3" stroke-width="2"/>
   </g>
   <rect x="604" y="26" width="70" height="12" rx="3" fill="#2F2E2E"/><text x="639" y="35.5" text-anchor="middle" font-family="Unbounded" font-weight="800" font-size="8" fill="#E9AC00">SUA LINHA</text>
-  <text x="46" y="${150 + fs * .35}" font-family="Unbounded,sans-serif" font-weight="900" font-size="${fs.toFixed(1)}" fill="${cor.tx}">${esc(nome)}</text>
+  <text data-max="524" data-y0="150" x="46" y="${150 + fs * .35}" font-family="Unbounded,sans-serif" font-weight="900" font-size="${fs.toFixed(1)}" fill="${cor.tx}">${esc(nome)}</text>
   <text x="48" y="${118 - (fs > 40 ? 4 : 0)}" font-family="Rubik,sans-serif" font-weight="500" font-size="15" fill="${cor.tx}" opacity=".85">a cidade é seu público</text>
   <g class="roda"><circle cx="150" cy="200" r="30" fill="#2F2E2E"/><circle cx="150" cy="200" r="13" fill="#ACABAB"/><rect x="148" y="186" width="4" height="28" fill="#636262"/></g>
   <g class="roda"><circle cx="545" cy="200" r="30" fill="#2F2E2E"/><circle cx="545" cy="200" r="13" fill="#ACABAB"/><rect x="543" y="186" width="4" height="28" fill="#636262"/></g>
   </svg>`;
 }
-function traseira(nome, cor, inteira){
-  const fs = tamanho(nome, 230, 34), id = "t" + (++uid);
+function traseira(nome, cor, tipo){   // tipo: busdoor (só o vidro), max (vidro + área abaixo), backbus (traseira inteira)
+  const inteira = tipo === "backbus", max = tipo === "max";
+  const fs = tamanho(nome, 230, max ? 38 : 34), id = "t" + (++uid);
   const ad = inteira
     ? `<rect x="34" y="62" width="292" height="196" rx="12" fill="${cor.bg}"/>
        <g transform="translate(150 120) scale(.6)" fill="${cor.tx}" opacity=".14">${SIMBOLO}</g>
        <rect x="44" y="70" width="272" height="88" rx="8" fill="url(#${id})"/>`
+    : max
+    ? `<rect x="40" y="66" width="280" height="160" rx="10" fill="${cor.bg}"/>
+       <g transform="translate(170 104) scale(.45)" fill="${cor.tx}" opacity=".14">${SIMBOLO}</g>
+       <rect x="44" y="70" width="272" height="88" rx="8" fill="url(#${id})"/>`
     : `<rect x="44" y="70" width="272" height="88" rx="8" fill="${cor.bg}"/>
        <rect x="44" y="70" width="272" height="88" rx="8" fill="url(#${id})"/>`;
-  const ty = inteira ? 196 : 122;
-  return `<svg class="onibus traseira" viewBox="0 0 360 330" role="img" aria-label="Traseira de ônibus com ${inteira ? "backbus" : "busdoor"} da marca ${esc(nome)}">
+  const ty = inteira ? 196 : max ? 176 : 122, legenda = inteira || max;
+  return `<svg class="onibus traseira" viewBox="0 0 360 330" role="img" aria-label="Traseira de ônibus com ${NOMES[tipo].toLowerCase()} da marca ${esc(nome)}">
   <defs><pattern id="${id}" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1" fill="#000" opacity=".3"/></pattern></defs>
   <rect x="58" y="282" width="52" height="40" rx="8" fill="#2F2E2E"/><rect x="250" y="282" width="52" height="40" rx="8" fill="#2F2E2E"/>
   <rect x="22" y="14" width="316" height="282" rx="26" fill="#FFFFFF"/>
   <rect x="104" y="24" width="152" height="24" rx="5" fill="#2F2E2E"/><text x="180" y="41" text-anchor="middle" font-family="Unbounded" font-weight="800" font-size="11" fill="#E9AC00">SUA LINHA</text>
   <rect x="44" y="70" width="272" height="88" rx="8" fill="#636262"/>
   ${ad}
-  <text x="180" y="${ty + fs * .35}" text-anchor="middle" font-family="Unbounded,sans-serif" font-weight="900" font-size="${fs.toFixed(1)}" fill="${cor.tx}">${esc(nome)}</text>
-  ${inteira ? `<text x="180" y="${ty + fs * .35 + 26}" text-anchor="middle" font-family="Rubik,sans-serif" font-weight="500" font-size="13" fill="${cor.tx}" opacity=".85">a cidade é seu público</text>` : ""}
+  <text data-max="256" data-y0="${ty}" x="180" y="${ty + fs * .35}" text-anchor="middle" font-family="Unbounded,sans-serif" font-weight="900" font-size="${fs.toFixed(1)}" fill="${cor.tx}">${esc(nome)}</text>
+  ${legenda ? `<text data-sub x="180" y="${ty + fs * .35 + 26}" text-anchor="middle" font-family="Rubik,sans-serif" font-weight="500" font-size="13" fill="${cor.tx}" opacity=".85">a cidade é seu público</text>` : ""}
   <rect x="36" y="262" width="34" height="18" rx="5" fill="#F06101"/><rect x="290" y="262" width="34" height="18" rx="5" fill="#F06101"/>
   <rect x="22" y="282" width="316" height="16" rx="6" fill="#636262"/>
   </svg>`;
@@ -1063,20 +1119,25 @@ function traseira(nome, cor, inteira){
 /* ilustrações dos cards de formato, com o mesmo desenho do simulador */
 document.querySelectorAll("[data-onibus]").forEach(el=>{
   const t = el.dataset.onibus, cor = COR[el.dataset.cor || (t === "backbus" ? "mostarda" : "indigo")];
-  el.innerHTML = t === "envelopado" ? lateral("SUA MARCA", cor) : traseira("SUA MARCA", cor, t === "backbus");
+  el.innerHTML = t === "envelopado" ? lateral("SUA MARCA", cor) : traseira("SUA MARCA", cor, t);
   const s = el.firstElementChild; s.setAttribute("aria-hidden","true"); s.removeAttribute("role"); s.style.animation = "none";
   if (t === "envelopado") s.classList.add("lado");
   s.querySelectorAll(".roda").forEach(r=>{ r.style.animation = "none"; });
 });
 const simForm = document.getElementById("simForm"), simBox = document.getElementById("simOnibus"), simRot = document.getElementById("simRotulo");
-const NOMES = {envelopado:"Envelopado", busdoor:"Busdoor", backbus:"Backbus"};
 const CORES = {mostarda:"Mostarda", abobora:"Abóbora", indigo:"Índigo", branco:"Branco"};   // nomes como aparecem na tela e na mensagem
 let ultimoFmt = "", usou = false;
 function desenha(evt){
   const nome = (simForm["s-marca"].value.trim() || "Sua marca").toUpperCase();
   const fmt = simForm["s-fmt"].value, cor = COR[simForm["s-cor"].value];
-  simBox.innerHTML = fmt === "envelopado" ? lateral(nome, cor) : traseira(nome, cor, fmt === "backbus");
+  simBox.innerHTML = fmt === "envelopado" ? lateral(nome, cor) : traseira(nome, cor, fmt);
   simRot.textContent = NOMES[fmt];
+  const t = simBox.querySelector("[data-max]"), w = t.getBBox().width, max = +t.dataset.max;
+  if (w > max){   // letras largas (MMMM, WWWW): reduz a fonte só o necessário para caber no anúncio
+    const fs = parseFloat(t.getAttribute("font-size")) * max / w, y = +t.dataset.y0 + fs * .35;
+    t.setAttribute("font-size", fs.toFixed(1)); t.setAttribute("y", y.toFixed(1));
+    simBox.querySelector("[data-sub]")?.setAttribute("y", (y + 26).toFixed(1));
+  }
   if (fmt !== ultimoFmt && !calmo && evt) simBox.firstElementChild.classList.add("chega");
   ultimoFmt = fmt;
   if (evt && !usou){ usou = true; track("simulador_uso"); }
@@ -1086,11 +1147,38 @@ desenha();
 document.getElementById("simCta").addEventListener("click", ()=>{
   const marca = simForm["s-marca"].value.trim(), fmt = simForm["s-fmt"].value;
   if (marca && !form.empresa.value) form.empresa.value = marca;
-  form.formato.value = {envelopado:"Ônibus envelopado", busdoor:"Busdoor", backbus:"Backbus"}[fmt];
+  form.formato.value = {envelopado:"Ônibus envelopado", busdoor:"Busdoor", max:"Max busdoor", backbus:"Backbus"}[fmt];
   form.simulador.value = `${marca || "-"} / ${NOMES[fmt]} / ${CORES[simForm["s-cor"].value]}`;
   track("simulador_cta", {formato: fmt});
   setTimeout(()=>form.nome.focus({preventScroll:true}), 700);
 });
+
+/* ====== SPECIAL PROJECTS (janela de fotos) ====== */
+const ESPECIAIS = [
+  ["esp-natal-1", "Ônibus iluminado de Natal passando ao lado de uma árvore de Natal gigante, à noite", "Ônibus iluminado de Natal"],
+  ["esp-natal-2", "Ônibus com contorno de luzes vermelhas no trânsito, à noite", "Ônibus iluminado de Natal"],
+  ["esp-natal-3", "Ônibus com letreiro Feliz Natal e luzes passando em frente a um shopping decorado", "Ônibus iluminado de Natal"],
+  ["esp-natal-4", "Ônibus envelopado com luzes de Natal e uma árvore desenhada na lateral", "Ônibus decorado de Natal"],
+  ["esp-natal-5", "Comboio de ônibus iluminados passando pela orla, visto do alto à noite", "Comboio iluminado de Natal"],
+  ["esp-shopping-1", "Painéis digitais verticais com anúncios no corredor de um shopping", "Painéis em shopping"],
+  ["esp-shopping-2", "Painel curvo gigante sobre a praça de alimentação de um shopping", "Painel em shopping"],
+  ["esp-shopping-3", "Painel com anúncio de carros sobre a praça de alimentação de um shopping", "Painel em shopping"],
+  ["esp-shopping-4", "Telão com anúncio pendurado sob a claraboia de um shopping", "Telão em shopping"],
+  ["esp-outdoor-1", "Outdoor com anúncio de corretora de seguros em um gramado à beira da via", "Outdoor"],
+  ["esp-outdoor-2", "Outdoor visto do alto, ao lado de uma avenida", "Outdoor"]
+];
+const visor = document.getElementById("especiais"), vImg = document.createElement("img");   // criada só ao abrir: sem imagem vazia na página
+let vi = 0;
+const mostra = n => { vi = (n + ESPECIAIS.length) % ESPECIAIS.length; const [f, alt, txt] = ESPECIAIS[vi];
+  if (!vImg.isConnected) document.getElementById("visorFig").prepend(vImg);
+  vImg.src = `img/${f}.webp?v=20261011142722`; vImg.alt = alt; document.getElementById("visorTxt").textContent = txt;
+  document.getElementById("visorN").textContent = `${vi + 1} / ${ESPECIAIS.length}`; };
+document.getElementById("abrePasta").addEventListener("click", ()=>{ mostra(0); visor.showModal(); track("special_projects"); });
+document.getElementById("visorFecha").onclick = ()=>visor.close();
+document.getElementById("visorAnt").onclick = ()=>mostra(vi - 1);
+document.getElementById("visorProx").onclick = ()=>mostra(vi + 1);
+visor.addEventListener("click", e=>{ if (e.target === visor) visor.close(); });   // clique fora da foto fecha
+visor.addEventListener("keydown", e=>{ if (e.key === "ArrowLeft") mostra(vi - 1); if (e.key === "ArrowRight") mostra(vi + 1); });
 
 /* ====== WHATSAPP, BARRA, COOKIES ====== */
 document.querySelectorAll(".js-wa").forEach(a=>{
@@ -1122,9 +1210,9 @@ if (CFG.ga4 || CFG.metaPixel){
   ck.className = "ck"; ck.hidden = true; ck.setAttribute("role","dialog"); ck.setAttribute("aria-label","Preferências de cookies");
   ck.innerHTML = '<p>Usamos cookies para medir as visitas e melhorar nossos anúncios. Você decide. <a href="/privacidade">Saiba mais</a></p><div class="ck-b"><button type="button" data-ck="reject">Recusar</button><button type="button" data-ck="accept">Aceitar</button></div>';
   document.body.append(ck);
-  const li = document.createElement("li"); li.innerHTML = '<a href="#">Preferências de cookies</a>';
-  document.querySelector('footer a[href="/privacidade"]').closest("ul").append(li);
-  li.firstChild.addEventListener("click", e=>{ e.preventDefault(); ck.hidden = false; });
+  const pref = document.createElement("a"); pref.href = "#"; pref.textContent = "Preferências de cookies";
+  document.querySelector('.legal a[href="/privacidade"]').after(" · ", pref);
+  pref.addEventListener("click", e=>{ e.preventDefault(); ck.hidden = false; });
   ck.addEventListener("click", e=>{ const v = e.target.dataset.ck; if(!v) return; gravarC(v); ck.hidden = true; if (v==="accept") carregarTags(); });
   const c = lerC(); if (c === "accept") carregarTags(); else if (!c) ck.hidden = false;
 }

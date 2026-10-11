@@ -217,8 +217,8 @@ async def main():
         # seções novas e fotos reais carregando
         for y in range(0, 9000, 600): await vp.evaluate(f"scrollTo(0,{y})"); await vp.wait_for_timeout(50)
         await vp.wait_for_timeout(800)
-        gal = await vp.evaluate("(()=>{const s=document.getElementById('campanhas');if(!s)return null;const im=[...s.querySelectorAll('img')];return {n:im.length,alt:im.every(i=>i.alt.trim().length>5),carregou:im.every(i=>i.complete&&i.naturalWidth>0)}})()")
-        ok("v3_galeria", gal and gal["n"] >= 8 and gal["alt"] and gal["carregou"], gal)
+        gal = await vp.evaluate("(()=>{const s=document.getElementById('campanhas');if(!s)return null;const im=[...s.querySelectorAll('figure:not(.pasta) img')];return {n:im.length,alt:im.every(i=>i.alt.trim().length>5),carregou:im.every(i=>i.complete&&i.naturalWidth>0)}})()")
+        ok("v3_galeria", gal and gal["n"] >= 7 and gal["alt"] and gal["carregou"] and await vp.evaluate("!!document.getElementById('abrePasta')"), gal)   # 7 por formato + a pasta Special Projects
         ok("v3_como_funciona", await vp.evaluate("(()=>{const s=document.getElementById('como-funciona');return !!s&&s.querySelectorAll('ol > li').length===5})()"), "")
         ok("v3_topo_fotos_reais", await vp.evaluate(r"![...document.querySelectorAll('.mosaico img')].some(i=>/img\/(onibus|passageiro|luzes)\.webp/.test(i.src))"), "foto de banco no topo")
         ok("v3_imagens_ok", await vp.evaluate("[...document.images].filter(i=>i.loading!=='lazy'||i.getBoundingClientRect().top<innerHeight*3).every(i=>i.complete&&i.naturalWidth>0)"), "imagem quebrada")

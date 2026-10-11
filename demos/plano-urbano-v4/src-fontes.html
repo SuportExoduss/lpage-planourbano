@@ -1,3 +1,5 @@
+<script>/* planourbano.web.app e planourbano.firebaseapp.com levam ao endereço oficial (o Firebase não redireciona por domínio) */
+if (/\.(web\.app|firebaseapp\.com)$/.test(location.hostname)) location.replace("https://www.agenciaplanourbano.com.br" + location.pathname + location.search + location.hash);</script>
 <link rel="preload" href="/fonts/unbounded-latin-v1.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/rubik-latin-v1.woff2" as="font" type="font/woff2" crossorigin>
 <style>/* fontes no próprio site (só o alfabeto latino), variáveis: um arquivo cobre todos os pesos */
