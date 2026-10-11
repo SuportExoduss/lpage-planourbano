@@ -1,0 +1,4 @@
+# cache do Firebase e capturas geradas pelos testes (300+ MB, refeitas a cada rodada)
+.firebase/
+demos/plano-urbano-v4/testes/resultados/
+__pycache__/

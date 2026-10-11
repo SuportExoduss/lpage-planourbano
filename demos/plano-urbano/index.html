@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plano Urbano | Agência de publicidade no Rio de Janeiro</title>
+<meta name="description" content="Agência de publicidade completa no Rio. Estudamos o seu nicho, criamos a campanha com você e colocamos a sua marca na rua: busdoor, backbus, ônibus envelopado e mais.">
+<meta property="og:title" content="Plano Urbano | Sua marca gravada na cidade">
+<meta property="og:description" content="Estudamos o seu nicho, criamos a campanha com você e colocamos na rua.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex"><!-- DEMONSTRAÇÃO: remover ao publicar -->
+<meta name="theme-color" content="#1c1e20">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232b2e31'/><path d='M4 24C10 18 14 22 19 13s7-7 9-9' stroke='%23c8a24a' stroke-width='2' fill='none'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Em produção: hospedar as fontes junto com a página (@font-face + font-display: swap) -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500..800&family=Hanken+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<style>
+/* Tokens: chumbo, grafite, pedra clara, marfim frio, ouro e amarelo (os dois vêm do veio) */
+:root{
+  --chumbo:#2b2e31; --grafite:#1c1e20; --pedra:#3a3e42; --pedra-2:#4a4f54;
+  --marfim:#e8e4da; --marfim-2:#aeaaa1; --ouro:#c8a24a; --amarelo:#f2c230; --tinta:#1c1e20;
+  --linha:rgba(200,162,74,.24);
+  --r:12px; --r-placa:4px;
+  --max:1320px;
+  --gutter:clamp(16px,4vw,48px);
+  --sec:clamp(72px,11vw,160px);
+  --curva:cubic-bezier(.16,1,.3,1);
+  /* Escala fluida: cresce com a largura da tela, de 375px a 1920px */
+  --t-hero:clamp(2rem,1.05rem + 4.6vw,3.2rem);              /* celular */
+  --t-h2:clamp(2rem,1.3rem + 3.1vw,4.4rem);
+  --t-h3:clamp(1.3rem,1.1rem + .8vw,1.9rem);
+  --t-lead:clamp(1.06rem,1rem + .35vw,1.3rem);
+  --t-base:clamp(1rem,.96rem + .18vw,1.1rem);
+}
+@media(min-width:700px){:root{--t-hero:clamp(2.4rem,.6rem + 3.9vw,3.4rem)}}        /* tablet */
+@media(min-width:1000px){:root{--t-hero:clamp(3.6rem,1.2rem + 3.9vw,6.4rem)}}       /* computador */
+@media(min-width:1800px){:root{--max:1600px;--t-base:1.15rem;--t-lead:1.4rem;--t-h2:clamp(4rem,2rem + 2.4vw,5.4rem)}}
+@media(min-width:2400px){:root{--max:1880px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--grafite);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--chumbo);color:var(--marfim);font:400 var(--t-base)/1.65 "Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:auto;padding:0 var(--gutter)}
+section{padding:var(--sec) 0;position:relative}
+p{margin:0 0 1em;max-width:62ch}
+h1,h2,h3{font-family:"Syne",sans-serif;font-weight:800;letter-spacing:-.03em;margin:0;text-wrap:balance}
+h2{font-size:var(--t-h2);line-height:1;margin-bottom:.45em;max-width:16ch}
+h3{font-size:var(--t-h3);line-height:1.1;font-weight:700;letter-spacing:-.02em}
+.lead{font-size:var(--t-lead);color:var(--marfim-2)}
+.todo{outline:1px dashed var(--ouro);outline-offset:3px;border-radius:3px}
+:focus-visible{outline:2px solid var(--amarelo);outline-offset:4px}
+
+/* Mármore: gerado no navegador (ver script). Fundo de reserva se o script não rodar */
+.pedra{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(120% 90% at 20% 10%,#3b3f43,var(--chumbo) 55%,#232628)}
+.pedra>svg.marmore{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.brilho{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.06),transparent 38%,transparent 62%,rgba(255,255,255,.035))}
+.hero .brilho{background:radial-gradient(90% 80% at 18% 55%,rgba(20,22,24,.72),rgba(20,22,24,.25) 60%,transparent),linear-gradient(115deg,rgba(255,255,255,.06),transparent 40%)}
+.placa .brilho{background:linear-gradient(180deg,rgba(20,22,24,.1),rgba(20,22,24,.55)),linear-gradient(115deg,rgba(255,255,255,.06),transparent 40%)}
+.declara .brilho{background:radial-gradient(80% 70% at 30% 45%,rgba(20,22,24,.7),rgba(20,22,24,.35) 70%),linear-gradient(115deg,rgba(255,255,255,.05),transparent 40%)}
+.pedido h2{font-size:clamp(2rem,1.2rem + 2.3vw,3.6rem);max-width:13ch}
+
+/* Botões: pílula; o principal é o amarelo do veio */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:clamp(48px,44px + .6vw,56px);padding:0 clamp(20px,2vw,28px);border-radius:999px;font:600 clamp(.95rem,.9rem + .2vw,1.05rem) "Hanken Grotesk",sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer;border:1px solid transparent;transition:transform .5s var(--curva),background-color .3s,border-color .3s,box-shadow .5s var(--curva)}
+.btn:active{transform:scale(.98)}
+.btn-amarelo{background:var(--amarelo);color:var(--tinta);box-shadow:0 10px 30px -12px rgba(242,194,48,.55)}
+.btn-amarelo:hover{background:#f6cf55;box-shadow:0 14px 34px -12px rgba(242,194,48,.7)}
+.btn-amarelo .seta{transition:transform .5s var(--curva)}
+.btn-amarelo:hover .seta{transform:translate(3px,-3px)}
+.btn-pedra{border-color:rgba(232,228,218,.3);color:var(--marfim);background:rgba(28,30,32,.35)}
+.btn-pedra:hover{border-color:var(--marfim)}
+
+/* Aviso de demonstração */
+.demo{background:var(--grafite);color:var(--marfim-2);font-size:.82rem;text-align:center;padding:8px var(--gutter);border-bottom:1px solid var(--linha)}
+.demo b{color:var(--ouro);font-weight:600}
+.demo p{margin:0 auto;max-width:none}
+
+/* Topo */
+header{position:absolute;left:0;right:0;z-index:5;padding:clamp(14px,2vw,26px) 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(1rem,.9rem + .4vw,1.3rem);letter-spacing:.06em;text-decoration:none;white-space:nowrap;padding:11px 0}
+.logo span{font-weight:500;color:var(--ouro)}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:clamp(20px,2.4vw,36px);font-size:.95rem}
+.nav ul a{text-decoration:none;color:var(--marfim-2);transition:color .3s}
+.nav ul a:hover{color:var(--marfim)}
+.nav .btn{min-height:44px;font-size:.9rem;padding:0 18px}
+@media(max-width:400px){.logo{font-size:.88rem;letter-spacing:.03em}.nav .btn{font-size:.82rem;padding:0 14px}.nav{gap:10px}}
+@media(min-width:1000px){.nav ul{display:flex}}
+
+/* Hero: a laje de mármore com o título gravado */
+.hero{padding:0;min-height:min(100svh,1200px);display:grid;align-items:center}
+.hero .wrap{width:100%;padding-top:clamp(96px,14vh,150px);padding-bottom:clamp(56px,8vh,96px)}
+.hero-grid{display:grid;gap:clamp(40px,5vw,72px);align-items:center}
+@media(min-width:700px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+@media(min-width:1000px){.hero-grid{grid-template-columns:1.3fr .7fr}}
+.hero h1{text-wrap:pretty}
+.hero h1{font-size:var(--t-hero);line-height:.98;margin-bottom:.35em;max-width:none;
+  color:#ece7dc;text-shadow:0 1px 0 rgba(255,255,255,.1),0 -1px 1px rgba(0,0,0,.55),0 18px 50px rgba(0,0,0,.45)}
+.hero .lead{max-width:34ch;margin-bottom:clamp(28px,3vw,40px);color:#c9c5bb}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+@media(max-width:479px){.ctas .btn{flex:1 1 100%}}
+
+/* Foto do ônibus numa moldura de pedra */
+.moldura{position:relative;margin:0;padding:clamp(8px,1vw,12px);border-radius:calc(var(--r) + 10px);background:rgba(28,30,32,.55);border:1px solid var(--linha);box-shadow:0 40px 80px -40px rgba(0,0,0,.9)}
+.moldura img{width:100%;height:auto;max-height:min(64svh,680px);aspect-ratio:1/1.08;object-fit:cover;object-position:62% 60%;border-radius:var(--r);filter:grayscale(1) sepia(.45) saturate(1.5) hue-rotate(-6deg) contrast(1.08) brightness(.88)}
+.moldura figcaption{padding:12px 6px 4px;font-size:.88rem;color:var(--marfim-2)}
+@media(max-width:699px){.moldura img{aspect-ratio:16/10;max-height:46svh;object-position:50% 80%}}
+@media(min-width:700px) and (max-width:999px){.moldura img{aspect-ratio:4/5}}
+
+/* O único momento orquestrado: os veios acendem quando a página abre */
+@media (prefers-reduced-motion:no-preference){
+  .hero>svg.marmore{animation:acende 2.2s var(--curva) both}
+  @keyframes acende{from{opacity:.15}to{opacity:1}}
+  .hero h1{animation:grava 1.2s var(--curva) both .2s}
+  @keyframes grava{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+
+/* Formatos: placas de mármore, cada uma cortada da pedra com veios próprios */
+.placas{display:grid;gap:clamp(12px,1.4vw,18px);margin-top:clamp(36px,4vw,56px);grid-template-columns:1fr}
+@media(min-width:700px){.placas{grid-template-columns:repeat(2,1fr)}.p-env,.p-mais{grid-column:1 / -1}}
+@media(min-width:1100px){.placas{grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(clamp(220px,20vw,300px),auto)}
+  .p-env{grid-column:1 / span 7;grid-row:span 2}.p-bd{grid-column:8 / span 5}.p-bb{grid-column:8 / span 5}.p-mais{grid-column:1 / -1}}
+.placa{border-radius:var(--r-placa);padding:clamp(22px,2.4vw,36px);display:flex;flex-direction:column;gap:12px;min-height:clamp(220px,26vw,300px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 60px -35px rgba(0,0,0,.8)}
+.placa .onde{font-size:.88rem;font-weight:600;color:var(--amarelo)}
+.placa p{color:#d2cec4;margin:0;max-width:40ch}
+.placa h3{font-size:clamp(1.9rem,1.2rem + 2.6vw,3.6rem);letter-spacing:-.035em;line-height:.95;margin-top:auto;
+  color:#ece7dc;text-shadow:0 1px 0 rgba(255,255,255,.08),0 -1px 1px rgba(0,0,0,.6)}
+.p-env h3{font-size:clamp(2.4rem,1.4rem + 4vw,5.6rem)}
+.p-mais{min-height:0}
+.p-mais .linha-mais{display:grid;gap:18px;align-items:end}
+@media(min-width:900px){.p-mais .linha-mais{grid-template-columns:1fr 1.1fr}}
+.p-mais h3{margin-top:0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.tags li{border:1px solid var(--linha);border-radius:999px;padding:5px 14px;font-size:.9rem;color:var(--marfim-2);background:rgba(28,30,32,.5)}
+
+/* Processo: um veio de ouro liga as quatro etapas (é sequência de verdade) */
+.processo{background:var(--grafite)}
+.passos{list-style:none;margin:clamp(40px,5vw,64px) 0 0;padding:0;display:grid;gap:clamp(28px,3vw,40px);position:relative}
+.passos::before{content:"";position:absolute;left:21px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--amarelo),var(--ouro) 60%,rgba(200,162,74,.1))}
+.passo{position:relative;padding-left:64px}
+.passo .n{position:absolute;left:0;top:-4px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--chumbo);border:1px solid var(--ouro);font-family:"Syne",sans-serif;font-weight:800;color:var(--amarelo)}
+.passo h3{margin-bottom:8px}
+.passo p{color:var(--marfim-2);margin:0;max-width:34ch}
+@media(min-width:1000px){
+  .passos{grid-template-columns:repeat(4,1fr)}
+  .passos::before{left:22px;right:22px;top:21px;bottom:auto;width:auto;height:2px;background:linear-gradient(90deg,var(--amarelo),var(--ouro) 60%,rgba(200,162,74,.15))}
+  .passo{padding:72px 0 0}
+  .passo .n{top:0}
+}
+
+/* Declaração */
+.declara h2{max-width:18ch}
+.declara-grid{display:grid;gap:clamp(40px,5vw,72px);margin-top:clamp(28px,3vw,44px)}
+@media(min-width:1000px){.declara-grid{grid-template-columns:1.1fr .9fr}}
+.sem{list-style:none;margin:0;padding:0}
+.sem li{padding:clamp(14px,1.4vw,20px) 0;border-bottom:1px solid var(--linha);font-size:clamp(1.02rem,.98rem + .25vw,1.2rem);display:flex;gap:16px;align-items:baseline}
+.sem li:first-child{border-top:1px solid var(--linha)}
+.sem li::before{content:"";flex:none;width:20px;height:2px;background:var(--ouro);transform:translateY(-5px)}
+.fatos{display:grid;gap:clamp(22px,2.4vw,34px);align-content:start}
+.fato{margin:0}
+.fato b{display:block;font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(1.9rem,1.3rem + 2.2vw,3.4rem);line-height:1;letter-spacing:-.03em;color:var(--amarelo);margin-bottom:6px}
+.fato span{color:#c9c5bb}
+
+/* Campanhas: galeria em rolagem lateral */
+.galeria{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(240px,70vw,380px);gap:clamp(12px,1.4vw,18px);overflow-x:auto;scroll-snap-type:x mandatory;padding:clamp(28px,3vw,44px) 0 14px;scrollbar-color:var(--pedra-2) transparent}
+@media(min-width:1100px){.galeria{grid-auto-columns:calc((100% - 3 * 18px) / 4)}}
+.galeria figure{margin:0;scroll-snap-align:start}
+.slot{aspect-ratio:4/5;border-radius:var(--r-placa);border:1px dashed rgba(200,162,74,.5);display:grid;place-items:center;text-align:center;padding:22px;color:#d2cec4;font-size:.92rem}
+.slot strong{display:block;color:var(--marfim);font-weight:600;margin-bottom:4px}
+.galeria figcaption{margin-top:10px;font-size:.9rem;color:var(--marfim-2)}
+.insta{display:inline-block;margin-top:12px;padding:12px 0;color:var(--amarelo);text-underline-offset:5px}
+
+/* Dúvidas */
+.faq{max-width:900px}
+details{border-bottom:1px solid var(--linha)}
+details:first-of-type{border-top:1px solid var(--linha)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:56px;padding:clamp(16px,2vw,24px) 0;font-size:clamp(1.05rem,1rem + .3vw,1.25rem);font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:none;width:12px;height:12px;border-right:2px solid var(--ouro);border-bottom:2px solid var(--ouro);transform:translateY(-3px) rotate(45deg);transition:transform .45s var(--curva)}
+details[open] summary::after{transform:translateY(3px) rotate(-135deg)}
+details p{margin:0 0 clamp(18px,2vw,26px);color:var(--marfim-2)}
+
+/* Pedido de proposta */
+.pedido{background:var(--grafite)}
+.pedido-grid{display:grid;gap:clamp(36px,4vw,64px);align-items:start}
+@media(min-width:1000px){.pedido-grid{grid-template-columns:.85fr 1.15fr}}
+.contatos{list-style:none;padding:0;margin:clamp(24px,3vw,36px) 0 0;display:grid;gap:14px}
+.contatos a{text-decoration:none;border-bottom:1px solid var(--linha);padding-bottom:2px;overflow-wrap:anywhere;transition:border-color .3s}
+.contatos a:hover{border-color:var(--amarelo)}
+.laje{border-radius:calc(var(--r) + 8px);padding:clamp(6px,.8vw,9px);border:1px solid var(--linha)}
+form{background:rgba(28,30,32,.9);border-radius:var(--r);padding:clamp(20px,3vw,40px);display:grid;gap:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.campos{display:grid;gap:18px}
+@media(min-width:640px){.campos{grid-template-columns:1fr 1fr}.campos .inteiro{grid-column:1/-1}}
+.campo{display:grid;gap:7px;min-width:0}
+.campo label{font-size:.92rem;font-weight:600}
+.campo .ajuda{font-size:.84rem;color:var(--marfim-2)}
+input,select,textarea{font:inherit;font-size:16px;color:var(--marfim);background:var(--chumbo);border:1px solid #626770;border-radius:10px;padding:0 14px;width:100%;min-width:0;transition:border-color .3s,box-shadow .3s}
+input,select{height:52px}
+textarea{padding:13px 14px;min-height:110px;resize:vertical}
+select option{background:var(--chumbo)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--amarelo);box-shadow:0 0 0 3px rgba(242,194,48,.18)}
+.erro{font-size:.88rem;color:#ff9e8c}
+.erro:empty{display:none}
+.hp{position:absolute;left:-9999px}
+.aviso{font-size:.84rem;color:var(--marfim-2);margin:0}
+.status{font-weight:600;margin:0;color:var(--amarelo)}
+form .btn{justify-self:start}
+@media(max-width:479px){form .btn{justify-self:stretch}}
+
+/* Rodapé */
+footer{background:var(--grafite);border-top:1px solid var(--linha);padding:clamp(40px,5vw,64px) 0 120px;font-size:.92rem;color:var(--marfim-2)}
+.rodape{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px 48px}
+footer .logo{font-size:1.5rem;color:var(--marfim)}
+footer a{margin-right:20px}
+
+/* Celular: barra fixa depois do hero */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:10px;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:rgba(28,30,32,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--linha);transform:translateY(110%);transition:transform .5s var(--curva)}
+.barra.mostra{transform:none}
+.barra .btn{flex:1;min-height:48px;padding:0 12px;font-size:.95rem}
+@media(min-width:1000px){.barra{display:none}}
+
+/* Cookies */
+.ck{position:fixed;left:16px;right:16px;bottom:16px;max-width:500px;z-index:30;background:var(--grafite);border:1px solid var(--linha);border-radius:var(--r);padding:20px;font-size:.92rem;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
+.ck p{margin:0 0 14px}
+.ck-b{display:flex;gap:8px}
+.ck-b button{flex:1;min-height:44px;border-radius:999px;border:1px solid rgba(232,228,218,.3);background:transparent;color:var(--marfim);font:inherit;font-weight:600;cursor:pointer}
+.ck-b button[data-ck=accept]{background:var(--amarelo);border-color:var(--amarelo);color:var(--tinta)}
+.ck[hidden]{display:none}
+
+/* Celular deitado (pouca altura): topo compacto, título e botões cabem na tela */
+@media (orientation:landscape) and (max-height:520px){
+  .demo{padding:4px var(--gutter);font-size:.75rem}
+  header{padding:6px 0}
+  .hero{min-height:auto}
+  .hero .wrap{padding-top:72px;padding-bottom:32px}
+  .hero-grid{grid-template-columns:1.35fr .65fr;gap:28px}
+  .hero h1{font-size:clamp(1.9rem,4.4vw,2.7rem);margin-bottom:.3em}
+  .hero .lead{font-size:1rem;margin-bottom:18px;max-width:44ch}
+  .ctas .btn{flex:0 0 auto}
+  .moldura img{aspect-ratio:4/5;max-height:70svh}
+  .moldura figcaption{display:none}
+}
+/* Tablet em pé: o topo acompanha o conteúdo em vez de ocupar a tela toda */
+@media(min-width:700px) and (max-width:999px) and (orientation:portrait){
+  .hero{min-height:auto}
+  .hero .wrap{padding-top:clamp(110px,14vw,140px);padding-bottom:clamp(56px,8vw,88px)}
+}
+/* Aviso de demonstração mais curto no celular */
+.d-curto{display:none}
+@media(max-width:600px){.d-longo{display:none}.d-curto{display:inline}}
+</style>
+</head>
+<body>
+
+<div class="demo" role="note"><p><b>Demonstração</b> da Trevo<span class="d-longo"> para a Plano Urbano. O que tem borda tracejada ou está entre [ ] é provisório.</span><span class="d-curto">. Itens tracejados são provisórios.</span></p></div>
+
+<header>
+  <nav class="wrap nav" aria-label="Principal">
+    <a class="logo" href="#">PLANO <span>URBANO</span></a>
+    <ul>
+      <li><a href="#formatos">Formatos</a></li>
+      <li><a href="#como">Como trabalhamos</a></li>
+      <li><a href="#campanhas">Campanhas</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+    </ul>
+    <a class="btn btn-amarelo" href="#proposta" data-cta="topo">Pedir proposta</a>
+  </nav>
+</header>
+
+<main>
+<!-- 1. HERO: a laje de mármore com o título gravado -->
+<section class="hero pedra" id="topo" data-marmore="11" data-escala="1">
+  <div class="brilho"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Sua marca gravada na cidade.</h1>
+      <p class="lead">Agência de publicidade completa do Rio. Estudamos o seu nicho, criamos a campanha com você e colocamos na rua.</p>
+      <div class="ctas">
+        <a class="btn btn-amarelo" href="#proposta" data-cta="hero">Pedir proposta <svg class="seta" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11L11 3M5 3h6v6"/></svg></a>
+        <a class="btn btn-pedra js-wa" href="#" data-cta="hero">Chamar no WhatsApp</a>
+      </div>
+    </div>
+    <figure class="moldura">
+      <!-- Foto do site atual. TROCAR por foto de uma campanha da Plano Urbano -->
+      <img src="https://static.wixstatic.com/media/c39b06_a0b49fdff64344b2a454ab2688025cf1~mv2.jpg/v1/fit/w_1200,h_1200,q_85,enc_auto/onibus.jpg" alt="Ônibus rodando em uma avenida" width="1200" height="800" fetchpriority="high">
+      <figcaption>Cada ônibus é uma vitrine que atravessa a cidade.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 2. FORMATOS: placas de mármore -->
+<section id="formatos">
+  <div class="wrap">
+    <h2>Formatos que rodam o dia inteiro.</h2>
+    <p class="lead">Seu anúncio passa pelos bairros onde está o seu público, parado no sinal, no engarrafamento e no ponto.</p>
+    <div class="placas">
+      <article class="placa pedra p-env" data-marmore="4" data-escala="1.1"><div class="brilho"></div>
+        <span class="onde">Laterais e traseira</span>
+        <p>O ônibus inteiro vira a campanha. É o formato de maior impacto, feito para lançamento e para marca que quer ser lembrada.</p>
+        <h3>Ônibus envelopado</h3>
+      </article>
+      <article class="placa pedra p-bd" data-marmore="23" data-escala=".8"><div class="brilho"></div>
+        <span class="onde">Vidro traseiro</span>
+        <p>O anúncio vai no vidro de trás, na altura dos olhos de quem vem atrás. Bom para marca local e oferta com endereço.</p>
+        <h3>Busdoor</h3>
+      </article>
+      <article class="placa pedra p-bb" data-marmore="37" data-escala=".9"><div class="brilho"></div>
+        <span class="onde">Traseira inteira</span>
+        <p>A traseira toda é sua. Área grande, lida de longe, na frente do motorista por vários minutos.</p>
+        <h3>Backbus</h3>
+      </article>
+      <article class="placa pedra p-mais" data-marmore="52" data-escala="1.3"><div class="brilho"></div>
+        <div class="linha-mais">
+          <div>
+            <span class="onde">Onde o público estiver</span>
+            <h3 style="margin-top:10px">E o que a ideia pedir.</h3>
+          </div>
+          <div>
+            <p style="margin-bottom:14px">A ideia vem antes do formato. Se o seu público está em outro lugar, a campanha vai até lá.</p>
+            <!-- TROCAR pela lista real de formatos da agência -->
+            <ul class="tags" aria-label="Outros formatos">
+              <li class="todo">[outdoor]</li><li class="todo">[painel de LED]</li><li class="todo">[ponto de ônibus]</li><li class="todo">[redes sociais]</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PROCESSO: sequência real, ligada por um veio de ouro -->
+<section class="processo" id="como">
+  <div class="wrap">
+    <h2>Da conversa até a rua.</h2>
+    <ol class="passos">
+      <li class="passo"><span class="n" aria-hidden="true">1</span><h3>Entender o negócio</h3><p>Quem compra de você, onde essa pessoa circula e o que você espera da campanha.</p></li>
+      <li class="passo"><span class="n" aria-hidden="true">2</span><h3>Criar a ideia juntos</h3><p>Propomos formato, região, período e mensagem. Você opina e a gente ajusta até fechar.</p></li>
+      <li class="passo"><span class="n" aria-hidden="true">3</span><h3>Resolver a produção</h3><p>Empresas de ônibus, arte, impressão e instalação ficam por nossa conta.</p></li>
+      <li class="passo"><span class="n" aria-hidden="true">4</span><h3>Colocar na rua</h3><p>A campanha começa a rodar e você acompanha com a gente o que ela está trazendo.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 4. DECLARAÇÃO sobre a pedra -->
+<section class="declara pedra" data-marmore="68" data-escala="1.2">
+  <div class="brilho"></div>
+  <div class="wrap">
+    <h2>Você aprova a ideia. O resto é com a gente.</h2>
+    <div class="declara-grid">
+      <ul class="sem">
+        <li>Nada de procurar empresa de ônibus por conta própria</li>
+        <li>Nada de cotar gráfica e instalador separados</li>
+        <li>Nada de adivinhar o formato certo para o seu nicho</li>
+        <li>Nada de campanha bonita que não fala com quem compra</li>
+      </ul>
+      <div class="fatos">
+        <p class="fato"><b>+10 anos</b><span>de experiência em publicidade exterior</span></p>
+        <p class="fato"><b>Do bairro ao Brasil</b><span>campanhas locais ou em várias cidades</span></p>
+        <p class="fato"><b class="todo">[00]</b><span>[campanhas feitas, se quiserem mostrar]</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. CAMPANHAS: TROCAR por fotos reais, com autorização dos clientes -->
+<section id="campanhas">
+  <div class="wrap">
+    <h2>Quem já rodou com a gente.</h2>
+    <div class="galeria" tabindex="0" aria-label="Galeria de campanhas, role para o lado">
+      <figure><div class="slot pedra" data-marmore="81" data-escala=".7"><div><strong>Foto de campanha real</strong>busdoor ou backbus, 1200 x 1500</div></div><figcaption>[Cliente], [formato], [cidade]</figcaption></figure>
+      <figure><div class="slot pedra" data-marmore="92" data-escala=".7"><div><strong>Foto de campanha real</strong>ônibus envelopado</div></div><figcaption>[Cliente], [formato], [cidade]</figcaption></figure>
+      <figure><div class="slot pedra" data-marmore="103" data-escala=".7"><div><strong>Foto de campanha real</strong>outro formato</div></div><figcaption>[Cliente], [formato], [cidade]</figcaption></figure>
+      <figure><div class="slot pedra" data-marmore="117" data-escala=".7"><div><strong>Foto de campanha real</strong>bastidores da instalação</div></div><figcaption>[Cliente], [formato], [cidade]</figcaption></figure>
+    </div>
+    <a class="insta" href="https://www.instagram.com/agenciaplanourbano/" target="_blank" rel="noopener">Ver mais no Instagram @agenciaplanourbano</a>
+  </div>
+</section>
+
+<!-- 6. DÚVIDAS -->
+<section id="duvidas" style="padding-top:0">
+  <div class="wrap faq">
+    <h2>Dúvidas comuns.</h2>
+    <div style="margin-top:clamp(24px,3vw,40px)">
+      <details><summary>Quanto custa uma campanha?</summary><p>Depende do formato, da quantidade de ônibus, da região e do período. Com as respostas do formulário montamos uma proposta com valores.</p></details>
+      <details><summary>Preciso chegar com a arte pronta?</summary><p class="todo">[Confirmar: a agência cria a arte? Se sim: "Não. Criamos a arte com você, ou adaptamos a que você já tem para cada formato."]</p></details>
+      <details><summary>Por quanto tempo a campanha fica rodando?</summary><p class="todo">[Confirmar o período mínimo e os períodos mais comuns]</p></details>
+      <details><summary>Vocês atendem fora do Rio?</summary><p>Sim. Fazemos campanhas do bairro ao Brasil. Conte no formulário as cidades que interessam.</p></details>
+      <details><summary>Em quanto tempo a campanha vai para a rua?</summary><p class="todo">[Confirmar o prazo médio entre aprovar a arte e a instalação]</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PEDIDO DE PROPOSTA -->
+<section class="pedido" id="proposta">
+  <div class="wrap pedido-grid">
+    <div>
+      <h2>Conte o que você quer anunciar.</h2>
+      <p class="lead">Com essas respostas a gente já chega na primeira conversa com ideias para o seu caso.</p>
+      <ul class="contatos">
+        <li><a class="js-wa" href="#" data-cta="contato">WhatsApp (21) 98606-2741</a></li>
+        <!-- CONFERIR: o site atual mostra .com, mas o domínio do site é .com.br -->
+        <li><a href="mailto:comercial@agenciaplanourbano.com">comercial@agenciaplanourbano.com</a></li>
+        <li><a href="https://www.instagram.com/agenciaplanourbano/" target="_blank" rel="noopener">Instagram @agenciaplanourbano</a></li>
+      </ul>
+    </div>
+    <div class="laje pedra" data-marmore="131" data-escala="1">
+      <form id="pedido" novalidate>
+        <div class="campos">
+          <div class="campo"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required><span class="erro" id="e-nome"></span></div>
+          <div class="campo"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" autocomplete="organization"></div>
+          <div class="campo"><label for="f-wa">WhatsApp</label><input id="f-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="a-wa"><span class="ajuda" id="a-wa">Com DDD</span><span class="erro" id="e-wa"></span></div>
+          <div class="campo"><label for="f-ramo">Ramo do seu negócio</label><input id="f-ramo" name="ramo" aria-describedby="a-ramo"><span class="ajuda" id="a-ramo">Ex.: clínica, restaurante, loja de móveis</span></div>
+          <div class="campo"><label for="f-regiao">Onde quer aparecer</label><input id="f-regiao" name="regiao" aria-describedby="a-regiao"><span class="ajuda" id="a-regiao">Bairros, cidades ou "ainda não sei"</span></div>
+          <div class="campo"><label for="f-inicio">Quando quer começar</label>
+            <select id="f-inicio" name="inicio"><option>Este mês</option><option>Nos próximos 3 meses</option><option>Ainda estou pesquisando</option></select></div>
+          <div class="campo inteiro"><label for="f-verba">Verba aproximada</label>
+            <select id="f-verba" name="verba"><option>Ainda não sei</option><option>Até R$ 5 mil</option><option>De R$ 5 mil a R$ 15 mil</option><option>De R$ 15 mil a R$ 50 mil</option><option>Acima de R$ 50 mil</option></select>
+            <span class="ajuda">Só para a proposta caber no que você pode investir. As faixas são exemplo; a agência define as dela.</span></div>
+          <div class="campo inteiro"><label for="f-obj">O que as pessoas devem fazer depois de ver o anúncio?</label><textarea id="f-obj" name="objetivo" aria-describedby="a-obj"></textarea><span class="ajuda" id="a-obj">Ex.: visitar a loja, lembrar da marca, marcar consulta</span></div>
+        </div>
+        <input class="hp" name="site_empresa" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term">
+        <button class="btn btn-amarelo" type="submit">Pedir proposta <svg class="seta" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11L11 3M5 3h6v6"/></svg></button>
+        <p class="aviso">Ao enviar, você concorda com a <a href="privacidade.html">Política de Privacidade</a> e em receber o contato da Plano Urbano sobre este pedido.</p>
+        <p class="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="rodape">
+      <p><span class="logo">PLANO <span>URBANO</span></span><br>A cidade é seu público.</p>
+      <p><span class="todo">[Razão social]</span><br>CNPJ <span class="todo">[00.000.000/0001-00]</span><br>Rio de Janeiro, RJ</p>
+    </div>
+    <p style="margin-top:24px"><a href="privacidade.html">Política de Privacidade</a><a href="#" id="ck-abrir">Preferências de cookies</a></p>
+  </div>
+</footer>
+
+<div class="barra" id="barra">
+  <a class="btn btn-amarelo" href="#proposta" data-cta="barra">Pedir proposta</a>
+  <a class="btn btn-pedra js-wa" href="#" data-cta="barra">WhatsApp</a>
+</div>
+
+<div class="ck" id="ck" hidden role="dialog" aria-label="Preferências de cookies">
+  <p>Usamos cookies para medir as visitas e melhorar nossos anúncios. Você escolhe. <a href="privacidade.html">Saiba mais</a></p>
+  <div class="ck-b"><button type="button" data-ck="reject">Rejeitar</button><button type="button" data-ck="accept">Aceitar</button></div>
+</div>
+
+<script>
+/* ====== CONFIGURAR ====== */
+const CFG = {
+  whatsapp: "5521986062741",                   // número do site atual
+  msg: "Olá! Vim pelo site e quero conversar sobre uma campanha.",
+  formEndpoint: "",                            // webhook/planilha/e-mail; vazio = modo demonstração
+  ga4: "",                                     // G-XXXXXXX
+  metaPixel: ""
+};
+
+/* Mármore chumbo com veios de ouro e amarelo, gerado no navegador.
+   A pedra é um ruído fractal suave. Os veios são poucas linhas longas,
+   desenhadas com espessuras diferentes e deformadas por turbulência
+   (feDisplacementMap), que é como o mármore de verdade escorre. */
+const NS = "http://www.w3.org/2000/svg";
+function sorteio(seed){ return ()=>{ seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function veio(r, w, h, x0, y0, dir, comp){
+  // uma linha que atravessa a pedra em diagonal suave, com curvas
+  let d = `M${x0.toFixed(1)} ${y0.toFixed(1)}`, x = x0, y = y0;
+  const passos = 5 + Math.floor(r() * 4), dx = comp / passos;
+  for (let k = 0; k < passos; k++){
+    const nx = x + dx, ny = y + dir * dx * (.18 + r() * .35) + (r() - .5) * h * .12;
+    d += ` Q${(x + dx * .5).toFixed(1)} ${(y + (r() - .5) * h * .18).toFixed(1)} ${nx.toFixed(1)} ${ny.toFixed(1)}`;
+    x = nx; y = ny;
+  }
+  return d;
+}
+function marmore(el){
+  const seed = +el.dataset.marmore || 1, e = +el.dataset.escala || 1;
+  const w = Math.max(320, Math.round(el.offsetWidth)), h = Math.max(200, Math.round(el.offsetHeight));
+  el.dataset.largura = w;
+  const r = sorteio(seed * 9973), id = "m" + seed;
+  const fx = (0.0022 / e).toFixed(5), fy = (0.006 / e).toFixed(5);
+  // em pedra alta e estreita (celular) os veios correm pelo lado mais comprido
+  const alto = h > w * 1.1, W = alto ? h : w, H = alto ? w : h;
+  const area = w * h, principais = Math.max(2, Math.min(6, Math.round(area / 200000) + 3));
+  let ouro = "", amarelo = "", brilho = "";
+  for (let k = 0; k < principais; k++){
+    const dir = r() < .5 ? 1 : -1;
+    const x0 = -W * .15, y0 = dir > 0 ? r() * H * .7 - H * .15 : H * .35 + r() * H * .75;
+    const dpath = veio(r, W, H, x0, y0, dir, W * 1.3);
+    const larg = (.8 + r() * 1.8).toFixed(2);
+    ouro += `<path d="${dpath}" stroke-width="${larg}" opacity="${(.6 + r() * .35).toFixed(2)}"/>`;
+    brilho += `<path d="${dpath}" stroke-width="${(larg * 7).toFixed(1)}"/>`;
+    // ramificações finas saindo do veio principal
+    const ramos = 2 + Math.floor(r() * 3);
+    for (let b = 0; b < ramos; b++){
+      const bx = r() * W, by = y0 + dir * bx * .3 + (r() - .5) * H * .2;
+      amarelo += `<path d="${veio(r, W, H, bx, by, -dir, W * (.25 + r() * .35))}" stroke-width="${(.35 + r() * .6).toFixed(2)}" opacity="${(.5 + r() * .45).toFixed(2)}"/>`;
+    }
+  }
+  const svg = `<svg class="marmore" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs>
+    <filter id="${id}n" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="${fx} ${fy}" numOctaves="5" seed="${seed}"/>
+      <feColorMatrix type="matrix" values=".26 0 0 0 .05  .26 0 0 0 .056  .26 0 0 0 .062  0 0 0 0 1"/>
+    </filter>
+    <filter id="${id}f" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="${(0.006 / e).toFixed(5)} ${(0.009 / e).toFixed(5)}" numOctaves="4" seed="${seed + 3}" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="${Math.round((28 + 42 * Math.min(1, w / 1000)) * e)}" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="${id}h" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="${Math.round(10 * e)}"/></filter>
+  </defs>
+  <rect width="100%" height="100%" filter="url(#${id}n)"/>
+  <g filter="url(#${id}f)" fill="none" stroke-linecap="round"${alto ? ' transform="matrix(0 1 1 0 0 0)"' : ''}>
+    <g stroke="#c8a24a" opacity=".16" filter="url(#${id}h)">${brilho}</g>
+    <g stroke="#c8a24a">${ouro}</g>
+    <g stroke="#f2c230">${amarelo}</g>
+  </g></svg>`;
+  el.querySelector(":scope > svg.marmore")?.remove();
+  el.insertAdjacentHTML("afterbegin", svg);
+}
+const pedras = [...document.querySelectorAll("[data-marmore]")];
+pedras.forEach(marmore);
+/* Refaz os veios quando a largura muda de verdade (girar o celular, redimensionar) */
+let espera;
+addEventListener("resize", ()=>{ clearTimeout(espera); espera = setTimeout(()=>pedras.forEach(el=>{ if (Math.abs(el.offsetWidth - (+el.dataset.largura || 0)) > 60) marmore(el); }), 250); });
+
+/* UTMs: guarda na sessão e preenche os campos ocultos */
+const qs = new URLSearchParams(location.search), utm = {};
+["utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(k=>{
+  let v = qs.get(k); try{ if(v) sessionStorage.setItem(k,v); else v = sessionStorage.getItem(k); }catch(e){}
+  if(v){ utm[k]=v; const el=document.querySelector(`[name=${k}]`); if(el) el.value=v; }
+});
+function track(nome, p={}){
+  if (window.gtag) gtag("event", nome, p);
+  if (window.fbq) fbq("track", nome==="generate_lead" ? "Lead" : "Contact", p);
+}
+
+/* WhatsApp com a origem na mensagem */
+const origem = utm.utm_campaign ? ` [${utm.utm_campaign}]` : "";
+document.querySelectorAll(".js-wa").forEach(a=>{
+  a.href = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(CFG.msg + origem)}`;
+  a.target = "_blank"; a.rel = "noopener";
+  a.addEventListener("click", ()=>track("click_whatsapp", {cta:a.dataset.cta}));
+});
+
+/* Barra fixa no celular aparece depois do hero */
+const barra = document.getElementById("barra");
+new IntersectionObserver(([e])=>barra.classList.toggle("mostra", !e.isIntersecting)).observe(document.getElementById("topo"));
+
+/* Formulário */
+const form = document.getElementById("pedido"), status = form.querySelector(".status"), tel = form.whatsapp;
+tel.addEventListener("input", ()=>{
+  const d = tel.value.replace(/\D/g,"").slice(0,11);
+  tel.value = d.length>6 ? `(${d.slice(0,2)}) ${d.slice(2,d.length-4)}-${d.slice(-4)}` : d.length>2 ? `(${d.slice(0,2)}) ${d.slice(2)}` : d;
+});
+function erro(id, txt, campo){ document.getElementById(id).textContent = txt; if (txt) campo.setAttribute("aria-invalid","true"); else campo.removeAttribute("aria-invalid"); }
+form.addEventListener("submit", async e=>{
+  e.preventDefault();
+  if (form.site_empresa.value) return;                    // honeypot
+  const nome = form.nome.value.trim(), fone = tel.value.replace(/\D/g,"");
+  erro("e-nome", nome.length < 2 ? "Escreva seu nome." : "", form.nome);
+  erro("e-wa", fone.length < 10 ? "Confira o WhatsApp com DDD." : "", tel);
+  if (nome.length < 2){ form.nome.focus(); return; }
+  if (fone.length < 10){ tel.focus(); return; }
+  const dados = Object.fromEntries(new FormData(form)); delete dados.site_empresa;
+  dados.pagina = location.href; dados.data = new Date().toISOString();
+  const btn = form.querySelector("button"); btn.disabled = true; status.textContent = "Enviando...";
+  try{
+    if (CFG.formEndpoint){
+      const r = await fetch(CFG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(dados)});
+      if (!r.ok) throw 0;
+    } else console.info("Modo demonstração, pedido:", dados);
+    track("generate_lead");
+    status.textContent = "Pedido recebido. A equipe da Plano Urbano chama você no WhatsApp.";
+    form.reset();
+  }catch(_){
+    status.textContent = "Não foi possível enviar. Chame direto no WhatsApp (21) 98606-2741.";
+  }finally{ btn.disabled = false; }
+});
+
+/* Consentimento (LGPD): nenhuma medição carrega antes de "Aceitar" */
+const ck = document.getElementById("ck");
+function lerC(){ try{ return localStorage.getItem("consent"); }catch(e){ return null; } }
+function gravarC(v){ try{ localStorage.setItem("consent", v); localStorage.setItem("consent_at", new Date().toISOString()); }catch(e){} }
+function carregarTags(){
+  if (CFG.ga4 && !window.gtag){
+    const s=document.createElement("script"); s.async=true; s.src="https://www.googletagmanager.com/gtag/js?id="+CFG.ga4; document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments)}; gtag("js",new Date()); gtag("config",CFG.ga4);
+  }
+  if (CFG.metaPixel && !window.fbq){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init",CFG.metaPixel); fbq("track","PageView");
+  }
+}
+const c = lerC();
+if (c === "accept") carregarTags(); else if (!c) ck.hidden = false;
+ck.addEventListener("click", e=>{ const v = e.target.dataset.ck; if(!v) return; gravarC(v); ck.hidden = true; if (v==="accept") carregarTags(); });
+document.getElementById("ck-abrir").addEventListener("click", e=>{ e.preventDefault(); ck.hidden = false; });
+</script>
+</body>
+</html>
