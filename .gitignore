@@ -1,4 +1,13 @@
-# cache do Firebase e capturas geradas pelos testes (300+ MB, refeitas a cada rodada)
+# O repositório tem só o site atual (demos/plano-urbano-v4). O resto fica no computador.
+/*
+!/.gitignore
+!/README.md
+!/demos/
+/demos/*
+!/demos/plano-urbano-v4/
+
+# gerados ou locais
 .firebase/
-demos/plano-urbano-v4/testes/resultados/
 __pycache__/
+demos/plano-urbano-v4/testes/resultados/
+demos/plano-urbano-v4/plano-urbano-visualizar.html
