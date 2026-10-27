@@ -1,7 +1,6 @@
 # Monta index.html a partir de src.html, embutindo o logo e o símbolo extraídos do brandbook.
 # Cada build ganha um número de versão: as imagens vão com ?v=versão (o navegador baixa de novo).
-# Também gera plano-urbano-visualizar.html (arquivo único, imagens embutidas) para mandar ao cliente.
-import re, urllib.parse, pathlib, time, base64
+import re, urllib.parse, pathlib, time
 d = pathlib.Path(__file__).parent
 versao = time.strftime('%Y%m%d%H%M%S')
 logo = (d/'logo.svg').read_text(encoding='utf-8').replace('<svg ', '<svg role="img" aria-hidden="true" ', 1)
@@ -25,12 +24,6 @@ IMG = r'(img/[\w.-]+\.(?:webp|jpg))'
 site = re.sub(IMG, r'\1?v=' + versao, html)
 (d/'index.html').write_text(site, encoding='utf-8')
 
-def embute(m):
-    f = m.group(1)
-    tipo = 'image/webp' if f.endswith('.webp') else 'image/jpeg'
-    return f'data:{tipo};base64,' + base64.b64encode((d/f).read_bytes()).decode()
-visual = re.sub(IMG, embute, html).replace('href="/privacidade"', 'href="#"')
-(d/'plano-urbano-visualizar.html').write_text(visual, encoding='utf-8')
 print('ok', versao, len(site))
 
 # política de privacidade: mesma marca, sem anotações internas
